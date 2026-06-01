@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="06_类与对象_对象模型和this指针/06_类与对象_对象模型和this指针.vcxproj" Id="d3c69f39-ae60-4db7-b7dc-ec10d1162c0b" />
+</Solution>

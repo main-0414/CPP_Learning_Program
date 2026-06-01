@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="04_数据类型/04_数据类型.vcxproj" Id="f33ccc0a-e073-4a57-a191-de026bb34495" />
+</Solution>

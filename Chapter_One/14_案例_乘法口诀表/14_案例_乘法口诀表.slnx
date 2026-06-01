@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="14_案例_乘法口诀表/14_案例_乘法口诀表.vcxproj" />
+</Solution>

@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="08_项目_三只小猪称体重/08_项目_三只小猪称体重.vcxproj" />
+</Solution>

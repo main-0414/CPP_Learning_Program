@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="15_跳转语句/15_跳转语句.vcxproj" Id="3b4bf62f-4062-4a08-bf6d-6df86fb3cf27" />
+</Solution>

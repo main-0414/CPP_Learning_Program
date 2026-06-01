@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="12_项目_水仙花数do while/12_项目_水仙花数do while.vcxproj" />
+</Solution>

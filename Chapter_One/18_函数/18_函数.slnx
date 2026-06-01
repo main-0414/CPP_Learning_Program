@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="18_函数/18_函数.vcxproj" Id="cf63ed60-b802-48a8-a789-53b448c09b13" />
+</Solution>

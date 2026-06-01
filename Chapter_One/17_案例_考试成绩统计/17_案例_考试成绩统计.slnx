@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="17_案例_考试成绩统计/17_案例_考试成绩统计.vcxproj" Id="e230f591-606c-4ff7-80e6-f99a8632ba06" />
+</Solution>

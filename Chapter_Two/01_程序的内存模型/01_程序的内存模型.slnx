@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="01_程序的内存模型/01_程序的内存模型.vcxproj" Id="beac3f70-56e7-410f-b0de-f1cb7900048f" />
+</Solution>

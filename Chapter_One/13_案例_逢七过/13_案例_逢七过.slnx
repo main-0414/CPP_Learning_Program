@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="13_案例_逢七过/13_案例_逢七过.vcxproj" />
+</Solution>

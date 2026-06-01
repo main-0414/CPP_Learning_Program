@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="08_运算重载符/08_运算重载符.vcxproj" Id="53002b5b-289a-4113-88a6-d7e3b8ecd288" />
+</Solution>

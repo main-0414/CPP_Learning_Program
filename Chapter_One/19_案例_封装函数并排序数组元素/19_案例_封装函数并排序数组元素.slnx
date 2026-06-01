@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="19_案例_封装函数并排序数组元素/19_案例_封装函数并排序数组元素.vcxproj" Id="d61cf719-5573-4bb3-8efd-27759a6f391c" />
+</Solution>
