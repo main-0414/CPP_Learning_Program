@@ -146,7 +146,6 @@
     <ClCompile Include="05 继承中同名成员处理方式.cpp" />
     <ClCompile Include="06 继承中的同名静态成员处理方式.cpp" />
     <ClCompile Include="07 多继承语法.cpp" />
-    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
