@@ -59,7 +59,7 @@ void testt1()
 
 
 
-int main()
+int main7()
 {
 	testt1();
 
