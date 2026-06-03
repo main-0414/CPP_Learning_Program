@@ -24,7 +24,7 @@ public:
 // 
 // 
 // 羊类
-class Sheep :virtual public Animal{};
+class Sheep :virtual public Animal{};	// virtual 关键字
 
 
 // 驼类
@@ -56,24 +56,12 @@ void a()
 
 
 
-
-
 }
-
-
-
-
-
-
-
-
 
 
 int main()
 {
 	a();
-
-
 
 	system("pause");
 	return 0;
