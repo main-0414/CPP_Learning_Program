@@ -75,9 +75,6 @@ void test02()
 {
 	cout << "sizeof(Animal) = " << sizeof(Animal) << endl;
 
-
-
-
 }
 
 
