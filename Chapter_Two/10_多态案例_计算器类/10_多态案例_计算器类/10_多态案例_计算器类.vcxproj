@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5d19ef49-81e8-43ca-99c5-6a92605d6a0b}</ProjectGuid>
-    <RootNamespace>My10多态</RootNamespace>
+    <ProjectGuid>{cabf8e2a-9baf-48e1-873c-4c464b069f05}</ProjectGuid>
+    <RootNamespace>My10多态案例计算器类</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,8 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="01 多态基本概念.cpp" />
-    <ClCompile Include="02 纯虚函数和抽象类.cpp" />
+    <ClCompile Include="calculator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

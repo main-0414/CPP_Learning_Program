@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="01 多态基本概念.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="02 纯虚函数和抽象类.cpp">
+    <ClCompile Include="calculator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

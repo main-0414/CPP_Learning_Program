@@ -1,7 +1,16 @@
 ﻿#include <iostream>
 using namespace std;
 
-// 多态
+// 多态：指通过基类指针或引用调用虚函数时，实际执行的是派生类中重写的函数版本。
+
+// 多态的优点：
+// 1.代码组织结构清晰
+// 2.可读性强
+// 3.利于前期和后期的扩展以及维护
+
+
+
+
 
 // 动物类
 class Animal
@@ -81,7 +90,7 @@ void test02()
 
 
 
-int main()
+int main1()
 {
 	//test01();
 	test02();
