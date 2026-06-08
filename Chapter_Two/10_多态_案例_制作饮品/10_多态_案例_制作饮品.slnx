@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="10_多态_案例_制作饮品/10_多态_案例_制作饮品.vcxproj" />
+</Solution>
