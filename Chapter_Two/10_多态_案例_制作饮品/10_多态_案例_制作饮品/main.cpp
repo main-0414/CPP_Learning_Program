@@ -98,7 +98,7 @@ void doWork(AbstractDringking* abs)	// AbstractDringking* abs = new Coffee;
 void doWork1(AbstractDringking& abs)	// 引用方式
 {
 	abs.makeDrink();
-}
+} 
 
 
 
