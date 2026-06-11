@@ -47,10 +47,6 @@ void Test01()
 	Base* base = new Son;
 	base->func();
 
-
-
-
-
 }
 
 
@@ -59,7 +55,7 @@ void Test01()
 
 
 
-int main()
+int main2()
 {
 	Test01();
 

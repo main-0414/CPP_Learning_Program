@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="10_多态_案例_制作饮品/10_多态_案例_制作饮品.vcxproj" />
+  <Project Path="10_多态_案例_制作饮品/10_多态_案例_制作饮品.vcxproj" Id="35635e84-2e3f-4da7-8bf3-06d67e049b3a" />
 </Solution>

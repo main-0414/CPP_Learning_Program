@@ -21,5 +21,8 @@
     <ClCompile Include="02 纯虚函数和抽象类.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="03 虚析构和纯虚析构.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
