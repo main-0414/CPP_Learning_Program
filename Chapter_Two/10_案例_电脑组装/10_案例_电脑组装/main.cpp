@@ -9,6 +9,7 @@ public:
 	virtual ~CPU() {};
 };
 
+
 class GPU
 {
 public:
