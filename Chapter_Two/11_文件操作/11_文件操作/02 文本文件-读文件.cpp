@@ -70,14 +70,11 @@ void test02()
 	// 5.关闭文件
 	ifs.close();
 
-
-
-
 }
 
 
 
-int main()
+int main2()
 {
 	test02();
 
