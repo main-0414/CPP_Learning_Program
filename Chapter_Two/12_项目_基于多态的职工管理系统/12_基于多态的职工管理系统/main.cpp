@@ -1,9 +1,10 @@
 ﻿#include <iostream>
 #include <string>
 #include "workerManager.h"
-#include "worker.h"
-#include "employee.h"
-
+//#include "worker.h"
+//#include "employee.h"
+//#include "manager.h"
+//#include "boss.h"
 
 
 
@@ -15,90 +16,98 @@
 int main()
 {
 	// 测试
-	Worker* wk = nullptr;
-	wk = new Employee(1, "张三", 1);	
-	wk->showInfo();
+	//Worker* wk = nullptr;
+	//wk = new Employee(1, "张三", 1);	
+	//wk->showInfo();
+	//delete wk;
 
+	//wk = new Manager(2, "李四", 2);
+	//wk->showInfo();
+	//delete wk;
 
-
-	//// 实例化管理对象
-	//workerManager wm;
-
-	//
-	//// choice 存储用户选项
-	//int choice = 0;
-
-
-	//while (true)
-	//{
-	//	// 展示菜单
-	//	wm.showMenu();
-
-	//	cout << "请输入您的选择：" << endl;
-	//	cin >> choice;	// 存选择
-
-
-	//	switch (choice)
-	//	{
-	//	case 0:		// 退出系统
-	//		wm.exitSystem();
+	//wk = new Boss(3, "王五", 3);
+	//wk->showInfo();
+	//delete wk;
 
 
 
 
 
-	//		break;
-	//	case 1:		// 增加职工
+
+	// 实例化管理对象
+	workerManager wm;
+
+	
+	// choice 存储用户选项
+	int choice = 0;
 
 
+	while (true)
+	{
+		// 展示菜单
+		wm.showMenu();
+
+		cout << "请输入您的选择：" << endl;
+		cin >> choice;	// 存选择
 
 
-	//		break;
-	//	case 2:
-	//		break;	// 显示职工
-
-
-
-
-	//	case 3:		// 删除职工
-
-
-
-
-	//		break;
-	//	case 4:		// 修改职工
-
-
-
-
-	//		break;
-	//	case 5:		// 查找职工
-
-
-
-	//		break;
-	//	case 6:		// 排序职工
-
-
-
-	//		break;
-	//	case 7:		// 清空职工
-
-
-
-	//		break;
-
-
-	//	default:
-	//		system("cls");	// 清屏
-	//		break;
-	//	}
+		switch (choice)
+		{
+		case 0:		// 退出系统
+			wm.exitSystem();
 
 
 
 
 
-	//}
+			break;
+		case 1:		// 增加职工
+
+
+
+
+			break;
+		case 2:
+			break;	// 显示职工
+
+
+
+
+		case 3:		// 删除职工
+
+
+
+
+			break;
+		case 4:		// 修改职工
+
+
+
+
+			break;
+		case 5:		// 查找职工
+
+
+
+			break;
+		case 6:		// 排序职工
+
+
+
+			break;
+		case 7:		// 清空职工
+
+
+
+			break;
+
+
+		default:
+			system("cls");	// 清屏
+			break;
+		}
+
+	}
 
 
 

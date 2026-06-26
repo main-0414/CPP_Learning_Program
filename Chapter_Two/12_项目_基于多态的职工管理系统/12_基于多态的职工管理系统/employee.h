@@ -9,7 +9,7 @@ class Employee :public Worker
 {
 public:
 	// 创建时要初始化职工属性
-	Employee(int ID,string name,int DID);
+	Employee(int ID, string name, int DID);
 
 	// 显示个人信息
 	virtual void showInfo();
