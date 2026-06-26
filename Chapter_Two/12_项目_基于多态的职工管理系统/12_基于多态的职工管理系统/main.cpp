@@ -54,37 +54,30 @@ int main()
 		switch (choice)
 		{
 		case 0:		// 退出系统
+
 			wm.exitSystem();
-
-
-
-
-
 			break;
+
 		case 1:		// 增加职工
-
-
-
-
+			
+			wm.Add_Employee();
 			break;
-		case 2:
-			break;	// 显示职工
+
+		case 2:		// 显示职工
 
 
-
+			break;	
 
 		case 3:		// 删除职工
 
 
-
-
 			break;
+
 		case 4:		// 修改职工
 
 
-
-
 			break;
+			
 		case 5:		// 查找职工
 
 

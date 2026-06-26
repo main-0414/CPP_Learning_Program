@@ -22,11 +22,11 @@ public:
 	// 记录职工人数
 	int m_EmpNum;
 
-	// 职工数组指针
+	// 职工数组的指针
 	Worker** m_EmpArray;
 
 	// 添加员工
-	void Add_Emp();
+	void Add_Employee();
 	
 	// 析构函数
 	~workerManager();

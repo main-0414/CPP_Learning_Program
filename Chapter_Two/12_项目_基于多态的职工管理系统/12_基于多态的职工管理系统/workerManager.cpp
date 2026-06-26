@@ -18,19 +18,21 @@ void workerManager::showMenu()
 	cout << "*************  4.修改职工信息  *************" << endl;
 	cout << "*************  5.查找职工信息  *************" << endl;
 	cout << "*************  6.按照编号排序  *************" << endl;
-	cout << "*************  7.清空所有文档  *************" << endl;
+	cout << "*************  7.清空所有信息  *************" << endl;
 	cout << "********************************************" << endl;
 	cout << endl;
 }
 
 
 // 添加职工
-void workerManager::Add_Emp()
+void workerManager::Add_Employee()
 {
 	cout << "请输入添加职工的数量：" << endl;
 
+
 	int addNum = 0;		// 保存用户输入增加的数量
 	cin >> addNum;
+
 
 	if (addNum > 0)
 	{
@@ -38,17 +40,25 @@ void workerManager::Add_Emp()
 		// 计算新建空间大小
 		int newSize = this->m_EmpNum + addNum;	// 新建空间大小 = 原记录人数 + 新增人数
 
-		// 开辟新空间
-		Worker** newSpace = new Worker* [newSize];
+
+		// 开辟（动态的）新空间
+		Worker** newSpace = new Worker* [newSize];	// 在堆区开辟一个连续的空间，里面存放了newSize个 Worker* 类型的指针
+		// Worker** ：指向"指针数组"的指针
+
 
 		// 将原空间下的数据，拷贝到新空间下
 		if (this->m_EmpArray != nullptr)
 		{
 			for (int i = 0; i < this->m_EmpNum; i++)
 			{
-				newSpace[i] = this->m_EmpArray[i];
+				newSpace[i] = this->m_EmpArray[i];		// 复制的不是Employee对象，而是Worker*指针
 			}
 		}
+
+
+		// 记录新职工开始存放的位置（原有职工后面的第一个位置）
+		int next = this->m_EmpNum;
+
 
 		// 批量添加新数据
 		for (int i = 0; i < addNum; i++)
@@ -67,13 +77,11 @@ void workerManager::Add_Emp()
 				<< "1、普通员工" << endl
 				<< "2、经理" << endl
 				<< "3、总裁" << endl;
-
 			cin >> deptSelect;
 
 
 			// 不同部门选择要new出不同的对象
 			Worker* nWorker = nullptr;
-
 
 
 			switch (deptSelect)
@@ -95,29 +103,36 @@ void workerManager::Add_Emp()
 			}
 
 
-			// 将创建职工职责，保存到数组中
-			newSpace[this->m_EmpNum + i] = nWorker;
+			// 将创建的职工，保存到数组中
+			//newSpace[this->m_EmpNum + i] = nWorker;
+			newSpace[next] = nWorker;
+			next++;
 
-
-
-			// 释放原有空间
-			delete[] this->m_EmpArray;
-
-			// 更新新空间的指向
-			this->m_EmpArray = newSpace;
-
-
-			// 更新新人数空间大小
-			this->m_EmpNum = newSize;
 		}
 
+		// 释放原有空间
+		delete[] this->m_EmpArray;
 
 
+		// 更新新空间的指向
+		this->m_EmpArray = newSpace;
+
+
+		// 更新新人数空间大小
+		this->m_EmpNum = newSize;
+
+
+		// 提示添加成功
+		cout << "成功添加" << addNum << "名新职工！" << endl;
+
 	}
-	else
-	{
-		cout << "输入数据有误" << endl;
-	}
+	else { cout << "输入数据有误" << endl; }
+
+
+	// 按任意键后 回到上级目录
+	system("pause");
+	system("cls");
+
 }
 
 
