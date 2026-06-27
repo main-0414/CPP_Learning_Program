@@ -5,6 +5,7 @@ workerManager::workerManager()
 	// 初始化属性
 	this->m_EmpNum = 0;
 	this->m_EmpArray = nullptr;
+
 }
 
 void workerManager::showMenu()
