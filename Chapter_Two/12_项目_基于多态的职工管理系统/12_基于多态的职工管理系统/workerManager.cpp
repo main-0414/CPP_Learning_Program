@@ -1,12 +1,5 @@
 ﻿#include "workerManager.h"
 
-workerManager::workerManager()
-{
-	// 初始化属性
-	this->m_EmpNum = 0;
-	this->m_EmpArray = nullptr;
-
-}
 
 void workerManager::showMenu()
 {
@@ -23,6 +16,125 @@ void workerManager::showMenu()
 	cout << "********************************************" << endl;
 	cout << endl;
 }
+
+
+// 构造：要进行属性初始化
+workerManager::workerManager()
+{
+	// 1. 文件不存在
+	ifstream ifs;
+	ifs.open(FILENAME, ios::in);
+
+
+	if (!ifs.is_open())	// 判断是否能打开（存在）
+	{
+		cout << "文件不存在！" << endl;
+		// 初始化属性
+
+		// 初始化记录人数
+		this->m_EmpNum = 0;
+		// 初始化数组指针
+		this->m_EmpArray = nullptr;
+		// 初始化标记为空
+		this->m_FileisEmpty = true;
+
+		ifs.close();	// 直接退出，不继续读了
+		return;			// 退出函数
+	}
+
+
+	// 2. 文件存在，数据为空
+
+	char ch;
+	ifs >> ch;	// 从文件读取一个字符，存到变量 ch 里面。
+
+	if (ifs.eof())	// EOF（End Of File，文件结束标志）只有"读取失败"以后才会置为 true。
+	{
+		// eof为真，文件为空
+		cout << "文件为空" << endl;
+
+		this->m_EmpNum = 0;
+
+		this->m_EmpArray = nullptr;
+
+		this->m_FileisEmpty = true;
+
+		ifs.close();	// 直接退出，不继续读了
+		return;			// 退出函数
+	}
+
+
+	// 3. 当文件有数据
+	int num = this->get_EmpNum();	// 获取人数
+	cout << "当前人数：" << num;
+	this->m_EmpNum = num;
+
+	this->m_EmpArray = new Worker* [num];		// 创建数组，规定容量
+	this->init_Emp();	// 初始化原数据
+}
+
+
+// 统计文件中人数
+int workerManager::get_EmpNum()
+{
+	ifstream ifs;
+	ifs.open(FILENAME, ios::in);	// 打开方式 ———— 读
+
+	string name;
+	int ID;
+	int DID;
+
+	int num = 0;
+
+	while (ifs >> ID >> name >> DID)	// 我们规定了"三个字段组成一个职工对象"。“>>” 通过空格来确定每个属性
+	{
+		num++;
+	}
+
+	return num;
+
+}
+
+void workerManager::init_Emp()
+{
+	ifstream ifs;
+	ifs.open(FILENAME, ios::in);
+
+
+	int ID;
+	int DID;
+	string name;
+
+	int index = 0;
+
+	while (ifs >> ID >> name >> DID)
+	{
+		Worker* original_Worker = nullptr;
+
+		// 根据部门来具体创建
+		if (DID == 1)		// 普通职工
+		{
+			original_Worker = new Employee(ID, name, DID);
+		}
+		else if (DID == 2)	// 经理
+		{
+			original_Worker = new Manager(ID, name, DID);
+		}
+		else if (DID == 3)	// 总裁
+		{
+			original_Worker = new Boss(ID, name, DID);
+		}
+
+		this->m_EmpArray[index++] = original_Worker;	// 把文件原本的职工创建出来放进数组
+	}
+
+	// 关闭文件
+	ifs.close();
+
+
+}
+
+
 
 
 // 添加职工
@@ -42,9 +154,11 @@ void workerManager::Add_Employee()
 		int newSize = this->m_EmpNum + addNum;	// 新建空间大小 = 原记录人数 + 新增人数
 
 
+
 		// 开辟（动态的）新空间
-		Worker** newSpace = new Worker* [newSize];	// 在堆区开辟一个连续的空间，里面存放了newSize个 Worker* 类型的指针
+		Worker** newSpace = new Worker * [newSize];	// 在堆区开辟一个连续的空间，里面存放了newSize个 Worker* 类型的指针
 		// Worker** ：指向"指针数组"的指针
+
 
 
 		// 将原空间下的数据，拷贝到新空间下
@@ -82,21 +196,21 @@ void workerManager::Add_Employee()
 
 
 			// 不同部门选择要new出不同的对象
-			Worker* nWorker = nullptr;
+			Worker* new_Worker = nullptr;
 
 
 			switch (deptSelect)
 			{
 			case 1:
-				nWorker = new Employee(ID, name, 1);
+				new_Worker = new Employee(ID, name, 1);
 				break;
 
 			case 2:
-				nWorker = new Manager(ID, name, 2);
+				new_Worker = new Manager(ID, name, 2);
 				break;
 
 			case 3:
-				nWorker = new Boss(ID, name, 3);
+				new_Worker = new Boss(ID, name, 3);
 				break;
 
 			default:
@@ -106,7 +220,7 @@ void workerManager::Add_Employee()
 
 			// 将创建的职工，保存到数组中
 			//newSpace[this->m_EmpNum + i] = nWorker;
-			newSpace[next] = nWorker;
+			newSpace[next] = new_Worker;
 			next++;
 
 		}
@@ -123,8 +237,16 @@ void workerManager::Add_Employee()
 		this->m_EmpNum = newSize;
 
 
+		// 标记改为不为空
+		this->m_FileisEmpty = false;
+
+
 		// 提示添加成功
 		cout << "成功添加" << addNum << "名新职工！" << endl;
+
+
+		// 数据保存
+		this->save();
 
 	}
 	else { cout << "输入数据有误" << endl; }
@@ -133,6 +255,24 @@ void workerManager::Add_Employee()
 	// 按任意键后 回到上级目录
 	system("pause");
 	system("cls");
+
+}
+
+
+void workerManager::save()
+{
+	ofstream ofs;
+	ofs.open(FILENAME, ios::out | ios::trunc);	// 追加写入文件（保留原有内容）
+
+	// 将每个人的数据写入到文件中
+	for (int i = 0; i < this->m_EmpNum; i++)
+	{
+		ofs << this->m_EmpArray[i]->m_ID << " "
+			<< "\t" << this->m_EmpArray[i]->m_Name << " "
+			<< "\t" << this->m_EmpArray[i]->m_DeptID << endl;
+	}
+
+	ofs.close();
 
 }
 
@@ -158,5 +298,9 @@ void workerManager::exitSystem()
 
 workerManager::~workerManager()
 {
-
+	if (this->m_EmpArray != nullptr)
+	{
+		delete[] m_EmpArray;
+		m_EmpArray = nullptr;
+	}
 }
