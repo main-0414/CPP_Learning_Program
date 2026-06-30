@@ -69,8 +69,8 @@ workerManager::workerManager()
 	cout << "当前人数：" << num;
 	this->m_EmpNum = num;
 
-	this->m_EmpArray = new Worker* [num];		// 创建数组，规定容量
-	this->init_Emp();	// 初始化原数据
+	this->m_EmpArray = new Worker* [num];		// 开辟数组，规定容量
+	this->init_Emp();	// 将文件中原本的的数据，存到数组中
 }
 
 

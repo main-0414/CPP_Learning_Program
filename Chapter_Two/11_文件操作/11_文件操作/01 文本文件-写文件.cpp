@@ -7,7 +7,6 @@ void test01()
 {
 	// 1.包含头文件的对象
 
-
 	// 2.创建流对象
 
 	ofstream ofs;
