@@ -9,12 +9,12 @@ Manager::Manager(int ID, string name, int DID)
 
 void Manager::showInfo()
 {
-	cout << "职工编号：" << this->m_ID
-		<< "\t姓名：" << this->m_Name
-		<< "\t岗位：" << this->getDeptName()
-		<< "\t岗位职责：完成老板交给的任务，并下发任务给员工" << endl;
+	cout << left;
+	cout << "职工编号：" << setw(10) << this->m_ID
+		<< "姓名：" << setw(10) << this->m_Name
+		<< "岗位：" << setw(10) << this->getDeptName()
+		<< "岗位职责：完成老板交给的任务，并下发任务给员工" << endl;
 }
-
 
 string Manager::getDeptName()
 {

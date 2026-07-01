@@ -10,10 +10,11 @@ Employee::Employee(int ID, string name, int DID)
 // 显示个人信息
 void Employee::showInfo()
 {
-	cout << "职工编号：" << this->m_ID
-		<< "\t姓名：" << this->m_Name
-		<< "\t岗位：" << this->getDeptName()
-		<< "\t岗位职责：完成经理交代的任务" << endl;
+	cout << left;
+	cout << "职工编号：" << setw(10) << this->m_ID
+		<< "姓名：" << setw(10) << this->m_Name
+		<< "岗位：" << setw(10) << this->getDeptName()
+		<< "岗位职责：完成经理交代的任务" << endl;
 }
 
 // 获取岗位名称

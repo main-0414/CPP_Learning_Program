@@ -74,7 +74,7 @@ workerManager::workerManager()
 
 	this->m_FileisEmpty = false;
 
-	this->m_EmpArray = new Worker* [this->m_EmpNum];		// 开辟数组，规定容量
+	this->m_EmpArray = new Worker * [this->m_EmpNum];		// 开辟数组，规定容量
 
 	this->init_Emp();	// 将文件中原本的的数据，存到数组中
 
@@ -279,14 +279,14 @@ void workerManager::Add_Employee()
 void workerManager::save()
 {
 	ofstream ofs;
-	ofs.open(FILENAME, ios::out | ios::trunc);	// 追加写入文件（保留原有内容）
+	ofs.open(FILENAME, ios::out | ios::trunc);	// 把内存中的所有职工重新保存到文件，重写（以内存数据为准，而不是无脑增加数据）
 
 	// 将每个人的数据写入到文件中
 	for (int i = 0; i < this->m_EmpNum; i++)
 	{
 		ofs << this->m_EmpArray[i]->m_ID << " "
-			<< "\t" << this->m_EmpArray[i]->m_Name << " "
-			<< "\t" << this->m_EmpArray[i]->m_DeptID << endl;
+			<< this->m_EmpArray[i]->m_Name << " "
+			<< this->m_EmpArray[i]->m_DeptID << endl;
 	}
 
 	ofs.close();
@@ -294,6 +294,95 @@ void workerManager::save()
 
 
 
+// 显示职工
+void workerManager::show_Emp()
+{
+	// 判断文件是否为空/存在
+	if (this->m_FileisEmpty == true)
+	{
+		cout << "文件记录为空或不存在！" << endl;
+	}
+	else
+	{
+		for (int i = 0; i < this->m_EmpNum; i++)
+		{
+			// 利用多态调用程序接口
+			this->m_EmpArray[i]->showInfo();
+		}
+	}
+
+	// 按任意键继续，清屏
+	system("pause");
+	system("cls");
+
+
+
+}
+
+
+// 判断员工是否存在（删除、更改、查找功能关联）
+int workerManager::IsExist(int ID)
+{
+
+	int index = -1;
+	for (int i = 0; i < this->m_EmpNum; i++)
+	{
+		if (this->m_EmpArray[i]->m_ID == ID)
+		{
+			//找到返回索引位置
+			index = i;
+
+			break;
+		}
+	}
+
+	return index;
+
+}
+
+// 删除职工
+void workerManager::del_Emp()
+{
+	if (this->m_FileisEmpty == true)
+	{
+		cout << "文件不存在或为空！" << endl;
+	}
+	else
+	{
+		// 按照职工编号来删除职工
+		cout << "请输入想删除的职工编号：" << endl;
+		int ID;
+		cin >> ID;
+
+		int index = this->IsExist(ID);
+		if (index == -1)
+		{
+			cout << "未找到该职工！" << endl;
+		}
+		else
+		{
+			// 删除的本质就是数据迁移
+			for (int i = index; i < this->m_EmpNum; i++)
+			{
+				this->m_EmpArray[i] = this->m_EmpArray[i + 1];
+			}
+
+			// 更新职工个数
+			this->m_EmpNum--;
+
+			this->m_FileisEmpty = (this->m_EmpNum == 0);
+
+			// 保存文件
+			this->save();
+
+			cout << "删除成功！" << endl;
+		}
+	}
+
+	system("pause");
+	system("cls");
+
+}
 
 
 
@@ -310,9 +399,6 @@ void workerManager::exitSystem()
 	system("pause");
 	exit(0);	// 退出程序
 }
-
-
-
 
 
 

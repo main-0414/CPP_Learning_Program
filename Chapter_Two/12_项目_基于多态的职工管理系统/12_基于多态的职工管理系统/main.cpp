@@ -63,12 +63,12 @@ int main()
 
 		case 2:		// 显示职工
 
-
+			wm.show_Emp();
 			break;	
 
 		case 3:		// 删除职工
 
-
+			wm.del_Emp();
 			break;
 
 		case 4:		// 修改职工

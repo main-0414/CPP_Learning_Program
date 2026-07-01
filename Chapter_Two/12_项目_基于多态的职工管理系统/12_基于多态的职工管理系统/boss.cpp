@@ -9,10 +9,11 @@ Boss::Boss(int ID, string name, int DID)
 
 void Boss::showInfo()
 {
-	cout << "职工编号：" << this->m_ID
-		<< "\t姓名：" << this->m_Name
-		<< "\t岗位：" << this->getDeptName()
-		<< "\t岗位职责：管理公司所有事务" << endl;
+	cout << left;
+	cout << "职工编号：" << setw(10) << this->m_ID
+		<< "姓名：" << setw(10) << this->m_Name
+		<< "岗位：" << setw(10) << this->getDeptName()
+		<< "岗位职责：管理公司所有事务" << endl;
 }
 
 

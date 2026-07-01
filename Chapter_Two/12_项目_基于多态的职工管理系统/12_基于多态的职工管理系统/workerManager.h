@@ -43,6 +43,15 @@ public:
 	// 初始化员工
 	void init_Emp();
 
+	// 显示职工
+	void show_Emp();
+
+	// 删除职工
+	void del_Emp();
+
+	// 判断员工是否存在
+	int IsExist(int ID);
+
 	// 析构函数
 	~workerManager();
 
