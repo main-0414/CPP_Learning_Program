@@ -22,13 +22,14 @@ void workerManager::showMenu()
 workerManager::workerManager()
 {
 	// 1. 文件不存在
+
 	ifstream ifs;
 	ifs.open(FILENAME, ios::in);
 
 
 	if (!ifs.is_open())	// 判断是否能打开（存在）
 	{
-		cout << "文件不存在！" << endl;
+		//cout << "文件不存在！" << endl;
 		// 初始化属性
 
 		// 初始化记录人数
@@ -43,7 +44,7 @@ workerManager::workerManager()
 	}
 
 
-	// 2. 文件存在，数据为空
+	// 2. 文件存在，数据为空（用户手动清空数据）
 
 	char ch;
 	ifs >> ch;	// 从文件读取一个字符，存到变量 ch 里面。
@@ -51,7 +52,7 @@ workerManager::workerManager()
 	if (ifs.eof())	// EOF（End Of File，文件结束标志）只有"读取失败"以后才会置为 true。
 	{
 		// eof为真，文件为空
-		cout << "文件为空" << endl;
+		//cout << "文件为空" << endl;
 
 		this->m_EmpNum = 0;
 
@@ -64,14 +65,28 @@ workerManager::workerManager()
 	}
 
 
-	// 3. 当文件有数据
-	int num = this->get_EmpNum();	// 获取人数
-	cout << "当前人数：" << num;
-	this->m_EmpNum = num;
 
-	this->m_EmpArray = new Worker* [num];		// 开辟数组，规定容量
+	// 3. 当文件有数据
+
+
+	//cout << "当前人数：" << this->get_EmpNum() << endl;
+	this->m_EmpNum = this->get_EmpNum();
+
+	this->m_FileisEmpty = false;
+
+	this->m_EmpArray = new Worker* [this->m_EmpNum];		// 开辟数组，规定容量
+
 	this->init_Emp();	// 将文件中原本的的数据，存到数组中
+
+	//// 测试：
+	//for (int i = 0; i < this->m_EmpNum; i++)
+	//{
+	//	cout << "职工ID：" << this->m_EmpArray[i]->m_ID
+	//		<< " 职工姓名：" << this->m_EmpArray[i]->m_Name
+	//		<< " 部门ID：" << this->m_EmpArray[i]->m_DeptID << endl;
+	//}
 }
+
 
 
 // 统计文件中人数
@@ -95,6 +110,8 @@ int workerManager::get_EmpNum()
 
 }
 
+
+// 将文件原数据存入数组中
 void workerManager::init_Emp()
 {
 	ifstream ifs;
@@ -273,7 +290,6 @@ void workerManager::save()
 	}
 
 	ofs.close();
-
 }
 
 
@@ -282,6 +298,12 @@ void workerManager::save()
 
 
 
+
+
+
+
+
+// 退出系统
 void workerManager::exitSystem()
 {
 	cout << "欢迎下次使用" << endl;
@@ -295,11 +317,19 @@ void workerManager::exitSystem()
 
 
 
-
+// 析构函数
 workerManager::~workerManager()
 {
 	if (this->m_EmpArray != nullptr)
 	{
+		// 得先释放数组内各个职工
+		for (int i = 0; i < this->m_EmpNum; i++)
+		{
+			delete this->m_EmpArray[i];
+			//this->m_EmpArray[i] = nullptr;	// 这个指针马上连同整个数组一起销毁了，所以置空没有意义。置空意义只存在于这块空间以后还要用
+		}
+
+		// 再释放数组指针
 		delete[] m_EmpArray;
 		m_EmpArray = nullptr;
 	}
