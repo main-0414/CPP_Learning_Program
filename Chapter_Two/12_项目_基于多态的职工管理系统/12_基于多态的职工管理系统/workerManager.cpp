@@ -205,7 +205,7 @@ void workerManager::Add_Employee()
 			cout << "请输入第" << i + 1 << "个新职工姓名：" << endl;
 			cin >> name;
 
-			cout << "请输入第" << i + 1 << "个新职工部门：" << endl
+			cout << "请输入第" << i + 1 << "个新职工岗位：" << endl
 				<< "1、普通员工" << endl
 				<< "2、经理" << endl
 				<< "3、总裁" << endl;
@@ -219,15 +219,15 @@ void workerManager::Add_Employee()
 			switch (deptSelect)
 			{
 			case 1:
-				new_Worker = new Employee(ID, name, 1);
+				new_Worker = new Employee(ID, name, deptSelect);
 				break;
 
 			case 2:
-				new_Worker = new Manager(ID, name, 2);
+				new_Worker = new Manager(ID, name, deptSelect);
 				break;
 
 			case 3:
-				new_Worker = new Boss(ID, name, 3);
+				new_Worker = new Boss(ID, name, deptSelect);
 				break;
 
 			default:
@@ -347,7 +347,7 @@ void workerManager::del_Emp()
 	{
 		cout << "文件不存在或为空！" << endl;
 	}
-	else
+	else 
 	{
 		// 按照职工编号来删除职工
 		cout << "请输入想删除的职工编号：" << endl;
@@ -385,6 +385,84 @@ void workerManager::del_Emp()
 }
 
 
+
+// 修改职工
+void workerManager::mod_Emp()
+{
+	if (this->m_FileisEmpty)
+	{
+		cout << "文件不存在 或 记录为空！" << endl;
+	}
+	else
+	{
+		cout << "请输入要修改的职工编号：" << endl;
+
+		int ID;
+		cin >> ID;
+
+		int result=this->IsExist(ID);
+		if (result!=-1)
+		{
+			// 查找到编号职工
+
+			delete this->m_EmpArray[result];	// 先置空
+			this->m_EmpArray[result] = nullptr;
+			
+			int newID = 0;
+			string newName = "";
+			int new_deptSelect = 0;
+
+			cout << "查找到" << ID << "号职工，请输入新职工编号：" << endl;
+			cin >> newID;
+
+			cout << "请输入新的姓名：" << endl;
+			cin >> newName;
+
+			cout << "请输入新岗位：" << endl;
+			cout<< "1、普通员工" << endl
+				<< "2、经理" << endl
+				<< "3、总裁" << endl;
+			cin >> new_deptSelect;
+
+
+			// 根据不同岗位创建不同对象
+			Worker* new_Worker = nullptr;
+
+			switch (new_deptSelect)
+			{
+			case 1:
+				new_Worker = new Employee(ID, newName, new_deptSelect);
+				break;
+
+			case 2:
+				new_Worker = new Manager(ID, newName, new_deptSelect);
+				break;
+
+			case 3:
+				new_Worker = new Boss(ID, newName, new_deptSelect);
+				break;
+
+			default:
+				break;
+			}
+
+
+			// 更新数组里的指针
+			this->m_EmpArray[result] = new_Worker;
+
+			cout << "修改成功!" << endl;
+
+			this->save();
+		}
+		else
+		{
+			cout << "修改失败，查无此人！" << endl;
+		}
+	}
+
+	system("pause");
+	system("cls");
+}
 
 
 

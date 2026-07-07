@@ -52,6 +52,10 @@ public:
 	// 判断员工是否存在
 	int IsExist(int ID);
 
+	// 修改职工
+	void mod_Emp();
+
+
 	// 析构函数
 	~workerManager();
 
