@@ -73,7 +73,7 @@ int main()
 
 		case 4:		// 修改职工
 
-
+			wm.mod_Emp();
 			break;
 			
 		case 5:		// 查找职工

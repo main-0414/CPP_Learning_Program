@@ -17,7 +17,7 @@ public:
 		
 
 	int m_ID;		// 职工编号
-	int m_DeptID;	// 职工所在部门编号
+	int m_DeptID;	// 职工所在岗位编号
 	string m_Name;	// 职工姓名
 
 };

@@ -431,15 +431,15 @@ void workerManager::mod_Emp()
 			switch (new_deptSelect)
 			{
 			case 1:
-				new_Worker = new Employee(ID, newName, new_deptSelect);
+				new_Worker = new Employee(newID, newName, new_deptSelect);
 				break;
 
 			case 2:
-				new_Worker = new Manager(ID, newName, new_deptSelect);
+				new_Worker = new Manager(newID, newName, new_deptSelect);
 				break;
 
 			case 3:
-				new_Worker = new Boss(ID, newName, new_deptSelect);
+				new_Worker = new Boss(newID, newName, new_deptSelect);
 				break;
 
 			default:
