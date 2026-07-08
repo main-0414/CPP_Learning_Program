@@ -83,9 +83,9 @@ int main()
 			
 		case 6:		// 排序职工
 
-
-
+			wm.sort_Emp();
 			break;
+
 		case 7:		// 清空职工
 
 

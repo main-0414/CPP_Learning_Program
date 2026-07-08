@@ -58,6 +58,9 @@ public:
 	// 查找职工
 	void find_Emp();
 
+	// 按照ID排序
+	void sort_Emp();
+
 
 	// 析构函数
 	~workerManager();

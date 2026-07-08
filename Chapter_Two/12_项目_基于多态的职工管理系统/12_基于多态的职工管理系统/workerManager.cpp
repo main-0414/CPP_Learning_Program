@@ -201,7 +201,6 @@ void workerManager::Add_Employee()
 
 
 			// 检查添加的编号是否重复
-
 			while (true)
 			{
 				bool repeat = false;
@@ -512,7 +511,7 @@ void workerManager::mod_Emp()
 				{
 					cout << "岗位输入错误，请重新输入！" << endl;
 				}
-				
+
 			}
 
 
@@ -539,7 +538,7 @@ void workerManager::mod_Emp()
 
 
 			// 删除旧对象
-			delete this->m_EmpArray[result];	
+			delete this->m_EmpArray[result];
 			this->m_EmpArray[result] = nullptr;
 
 
@@ -573,25 +572,25 @@ void workerManager::find_Emp()
 	else
 	{
 		while (true)
-		{	
+		{
 			cout << "请输入查找方式：" << endl
-			<< "1、按照 ID 查找" << endl
-			<< "2、按照 姓名 查找" << endl;
+				<< "1、按照 ID 查找" << endl
+				<< "2、按照 姓名 查找" << endl;
 
 			int select = 0;
 			cin >> select;
 
-			if (select==1 or select==2)
+			if (select == 1 or select == 2)
 			{
 				if (select == 1)
 				{
 					int ID;
-					cout << "请输入查找的编号：" ;
+					cout << "请输入查找的编号：";
 					cin >> ID;
 
 					int result = IsExist(ID);
 
-					if (result!=-1)
+					if (result != -1)
 					{
 						cout << "查找成功！该职工信息如下：" << endl;
 						this->m_EmpArray[result]->showInfo();
@@ -601,19 +600,19 @@ void workerManager::find_Emp()
 						cout << "查无此人！" << endl;
 					}
 				}
-				else if (select==2)
+				else if (select == 2)
 				{
 					string name;
 					cout << "请输入查找职工的姓名：";
 					cin >> name;
-					
+
 					bool Find = false;	// 找到的标记
 
 					for (int i = 0; i < m_EmpNum; i++)
 					{
-						if (this->m_EmpArray[i]->m_Name==name)
+						if (this->m_EmpArray[i]->m_Name == name)
 						{
-							cout << "查找成功！该职工信息如下：" << endl;
+							cout << "查找成功，职工编号为：" << this->m_EmpArray[i]->m_ID << " 的职工信息如下：" << endl;
 
 							Find = true;
 
@@ -644,6 +643,96 @@ void workerManager::find_Emp()
 }
 
 
+
+
+// 按照ID排序
+void workerManager::sort_Emp()
+{
+	if (m_FileisEmpty)
+	{
+		cout << "文件不存在 或 记录为空！" << endl;
+	}
+	else
+	{
+		bool sort = false;
+		while (true)
+		{
+			cout << "请输入排序方式：" << endl
+				<< "1、按照ID 升序" << endl
+				<< "2、按照ID 降序" << endl;
+
+			int select = 0;
+			cin >> select;
+
+			
+
+			if (select == 1)	// 升序
+			{
+				for (int i = 0; i < this->m_EmpNum; i++)
+				{
+					int MinOrMax = i;	// MinOrMax 放整个数组 最小或最大 的数，假设是第i个
+
+					for (int j = i + 1; j < this->m_EmpNum; j++)
+					{
+						if (this->m_EmpArray[MinOrMax]->m_ID > this->m_EmpArray[j]->m_ID)
+						{
+							MinOrMax = j;	// 每次往后面的数值比较，找到更小的就更新下标，直到找到当次循环最小的值的下标
+						}
+					}
+
+					// 看当次循环的定数，是不是真正的 最小值 或 最大值，如果不是 交换数据
+					if (i != MinOrMax)
+					{
+						Worker* temp = this->m_EmpArray[i];
+						this->m_EmpArray[i] = this->m_EmpArray[MinOrMax];
+						this->m_EmpArray[MinOrMax] = temp;
+					}
+				}
+
+				sort = true;
+				break;
+			}
+			else if (select == 2)	// 降序
+			{
+				for (int i = 0; i < this->m_EmpNum; i++)
+				{
+					int MinOrMax = i;	// 声明最小值下表 或者 最大值下标
+
+					for (int j = i+1; j < this->m_EmpNum; j++)
+					{
+						if (this->m_EmpArray[MinOrMax]->m_ID < this->m_EmpArray[j]->m_ID)
+						{
+							MinOrMax = j;	// 更新下标
+						}
+					}
+
+					if (i != MinOrMax)
+					{
+						Worker* temp = this->m_EmpArray[i];
+						this->m_EmpArray[i] = this->m_EmpArray[MinOrMax];
+						this->m_EmpArray[MinOrMax] = temp;
+					}
+
+				}
+
+				sort = true;
+				break;
+			}
+			else
+			{
+				cout << "输入有误！请重新输入！" << endl;
+			}
+		}
+
+		if (sort)
+		{
+			cout << "排序成功！" << endl;
+			this->save();
+			this->show_Emp();	// 展示所有职工
+		}
+	}
+
+}
 
 
 

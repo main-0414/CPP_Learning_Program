@@ -1,4 +1,4 @@
 # Learning_Program
 
-Hello, this is my C++ learningrepository.  
+Hello, this is my C++ learning repository.  
 I can do my best.
