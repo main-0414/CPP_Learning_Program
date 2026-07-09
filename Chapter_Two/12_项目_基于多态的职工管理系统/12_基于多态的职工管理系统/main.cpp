@@ -1,40 +1,12 @@
 ﻿#include <iostream>
 #include <string>
 #include "workerManager.h"
-//#include "worker.h"
-//#include "employee.h"
-//#include "manager.h"
-//#include "boss.h"
-
-
-
-
 
 
 int main()
 {
-	// 测试
-	//Worker* wk = nullptr;
-	//wk = new Employee(1, "张三", 1);	
-	//wk->showInfo();
-	//delete wk;
-
-	//wk = new Manager(2, "李四", 2);
-	//wk->showInfo();
-	//delete wk;
-
-	//wk = new Boss(3, "王五", 3);
-	//wk->showInfo();
-	//delete wk;
-
-
-
-
-
-
 	// 实例化管理对象
 	workerManager wm;
-
 	
 	// choice 存储用户选项
 	int choice = 0;
@@ -88,27 +60,14 @@ int main()
 
 		case 7:		// 清空职工
 
-
-
+			wm.clean_File();
 			break;
-
 
 		default:
 			system("cls");	// 清屏
 			break;
 		}
-
 	}
 
 
-
-
-
-
-
-
-
-
-
-	system("pause");
 }

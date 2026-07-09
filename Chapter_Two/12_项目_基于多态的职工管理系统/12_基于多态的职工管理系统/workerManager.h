@@ -61,9 +61,10 @@ public:
 	// 按照ID排序
 	void sort_Emp();
 
+	// 清空文件
+	void clean_File();
 
 	// 析构函数
 	~workerManager();
-
 	
 };

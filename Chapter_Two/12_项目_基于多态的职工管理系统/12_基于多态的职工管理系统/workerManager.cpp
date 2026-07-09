@@ -78,13 +78,7 @@ workerManager::workerManager()
 
 	this->init_Emp();	// 将文件中原本的的数据，存到数组中
 
-	//// 测试：
-	//for (int i = 0; i < this->m_EmpNum; i++)
-	//{
-	//	cout << "职工ID：" << this->m_EmpArray[i]->m_ID
-	//		<< " 职工姓名：" << this->m_EmpArray[i]->m_Name
-	//		<< " 部门ID：" << this->m_EmpArray[i]->m_DeptID << endl;
-	//}
+
 }
 
 
@@ -111,11 +105,11 @@ int workerManager::get_EmpNum()
 }
 
 
-// 将文件原数据存入数组中
+// 将文件原数据初始化，存入数组中
 void workerManager::init_Emp()
 {
 	ifstream ifs;
-	ifs.open(FILENAME, ios::in);
+	ifs.open(FILENAME, ios::in);	// 读数据
 
 
 	int ID;
@@ -128,7 +122,7 @@ void workerManager::init_Emp()
 	{
 		Worker* original_Worker = nullptr;
 
-		// 根据部门来具体创建
+		// 根据岗位来具体创建
 		if (DID == 1)		// 普通职工
 		{
 			original_Worker = new Employee(ID, name, DID);
@@ -320,7 +314,7 @@ void workerManager::Add_Employee()
 
 void workerManager::save()
 {
-	ofstream ofs;
+	ofstream ofs;	// 输出文件流（写文件）
 	ofs.open(FILENAME, ios::out | ios::trunc);	// 把内存中的所有职工重新保存到文件，重写（以内存数据为准，而不是无脑增加数据）
 
 	// 将每个人的数据写入到文件中
@@ -356,8 +350,6 @@ void workerManager::show_Emp()
 	// 按任意键继续，清屏
 	system("pause");
 	system("cls");
-
-
 
 }
 
@@ -651,6 +643,9 @@ void workerManager::sort_Emp()
 	if (m_FileisEmpty)
 	{
 		cout << "文件不存在 或 记录为空！" << endl;
+
+		system("pause");
+		system("cls");
 	}
 	else
 	{
@@ -728,7 +723,7 @@ void workerManager::sort_Emp()
 		{
 			cout << "排序成功！" << endl;
 			this->save();
-			this->show_Emp();	// 展示所有职工
+			this->show_Emp();	// 展示所有职工。因为显示职工函数已经有清屏所以不用再写了
 		}
 	}
 
@@ -737,12 +732,61 @@ void workerManager::sort_Emp()
 
 
 
+// 清空文件
+void workerManager::clean_File()
+{
+	cout << "确定清空吗？" << endl
+		<< "1、确定" << endl
+		<< "2、返回" << endl;
+
+	int select = 0;
+	cin >> select;
+
+	switch (select)
+	{
+	case 1:
+	{
+		ofstream ofs;
+
+		ofs.open(FILENAME, ios::trunc);		// 打开模式 ios::trunc 如果存在删除文件并重新创建
+		ofs.close();
+
+		if (this->m_EmpArray !=nullptr)
+		{
+			for (int i = 0; i < this->m_EmpNum; i++)
+			{
+				delete this->m_EmpArray[i];
+
+			}
+			
+			delete[] this->m_EmpArray;	// 删除数组指针
+			this->m_EmpArray = nullptr;	// 置空
+			this->m_FileisEmpty = true;	// 更新标记
+			this->m_EmpNum = 0;			// 更新人数
+
+		}
+
+		cout << "清空成功！" << endl;
+		break;
+	}
+		
+	default:
+		cout << "已退出！" << endl;
+		break;
+	}
+
+	system("pause");
+	system("cls");
+}
+
+
+
 
 
 // 退出系统
 void workerManager::exitSystem()
 {
-	cout << "欢迎下次使用" << endl;
+	cout << "欢迎下次使用！" << endl;
 	system("pause");
 	exit(0);	// 退出程序
 }
