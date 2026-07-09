@@ -737,7 +737,7 @@ void workerManager::clean_File()
 {
 	cout << "确定清空吗？" << endl
 		<< "1、确定" << endl
-		<< "2、返回" << endl;
+		<< "2、取消" << endl;
 
 	int select = 0;
 	cin >> select;
@@ -771,7 +771,7 @@ void workerManager::clean_File()
 	}
 		
 	default:
-		cout << "已退出！" << endl;
+		cout << "已取消！" << endl;
 		break;
 	}
 
