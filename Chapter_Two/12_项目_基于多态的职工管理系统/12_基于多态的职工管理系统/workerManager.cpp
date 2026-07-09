@@ -18,6 +18,20 @@ void workerManager::showMenu()
 }
 
 
+
+
+
+// 退出系统
+void workerManager::exitSystem()
+{
+	cout << "欢迎下次使用！" << endl;
+	system("pause");
+	exit(0);	// 退出程序
+}
+
+
+
+
 // 构造：要进行属性初始化
 workerManager::workerManager()
 {
@@ -777,18 +791,6 @@ void workerManager::clean_File()
 
 	system("pause");
 	system("cls");
-}
-
-
-
-
-
-// 退出系统
-void workerManager::exitSystem()
-{
-	cout << "欢迎下次使用！" << endl;
-	system("pause");
-	exit(0);	// 退出程序
 }
 
 
