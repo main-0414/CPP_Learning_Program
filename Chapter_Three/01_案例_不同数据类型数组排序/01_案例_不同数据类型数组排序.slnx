@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="01_案例_不同数据类型数组排序/01_案例_不同数据类型数组排序.vcxproj" />
+  <Project Path="01_案例_不同数据类型数组排序/01_案例_不同数据类型数组排序.vcxproj" Id="1ea3c84f-2cd8-4fb3-94fb-eacda1bca2d4" />
 </Solution>

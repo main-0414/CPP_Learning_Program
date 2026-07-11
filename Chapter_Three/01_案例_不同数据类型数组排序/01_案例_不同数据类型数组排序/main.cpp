@@ -34,6 +34,8 @@ void mySort(T arr[], int len)
 	}
 }
 
+
+
 // 提供打印数组模板
 template<class T>
 void printArr(T arr[], int len)
@@ -57,6 +59,7 @@ void test01()
 	printArr(charArr, num);
 }
 
+
 // 测试int数组
 void test02()
 {
@@ -70,14 +73,10 @@ void test02()
 
 
 
-
-
 int main()
 {
 	test01();
 	test02();
-
-
 
 	system("pause");
 	return 0;
