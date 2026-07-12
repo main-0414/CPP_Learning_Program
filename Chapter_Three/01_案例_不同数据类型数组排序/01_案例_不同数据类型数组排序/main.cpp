@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 using namespace std;
 
+
 /*
 案例描述：
 	利用函数模板封装一个排序的函数，可以对不同数据类型数组进行排序
