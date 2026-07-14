@@ -27,5 +27,8 @@
     <ClCompile Include="04 普通函数 和 函数模板 的调用规则.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="05 函数模板的局限性.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
