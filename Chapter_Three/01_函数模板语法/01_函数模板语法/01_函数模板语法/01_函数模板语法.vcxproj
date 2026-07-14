@@ -141,6 +141,8 @@
   <ItemGroup>
     <ClCompile Include="01 函数模板语法.cpp" />
     <ClCompile Include="02 函数模板注意事项.cpp" />
+    <ClCompile Include="03 普通函数 和 函数模板 的区别.cpp" />
+    <ClCompile Include="04 普通函数 和 函数模板 的调用规则.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

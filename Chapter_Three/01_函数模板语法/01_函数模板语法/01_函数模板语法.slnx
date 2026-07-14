@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="01_函数模板语法/01_函数模板语法.vcxproj" />
+  <Project Path="01_函数模板语法/01_函数模板语法.vcxproj" Id="8a9aa7a6-8ce1-4f00-80f4-79de716faaba" />
 </Solution>

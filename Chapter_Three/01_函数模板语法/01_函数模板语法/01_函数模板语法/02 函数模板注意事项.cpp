@@ -52,7 +52,7 @@ void test03()
 
 
 
-int main()
+int main2()
 {
 	test02();
 	test03();
