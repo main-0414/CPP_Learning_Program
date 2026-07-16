@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="01 类模板语法.cpp" />
     <ClCompile Include="02 类模板 与 函数模板 的区别.cpp" />
+    <ClCompile Include="03 类模板中成员函数创建时机.cpp" />
+    <ClCompile Include="04 类模板对象做函数参数.cpp" />
+    <ClCompile Include="05 类模板与继承.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -48,19 +48,11 @@ void test03()
 	Person<string> p("猪八戒", 9999);		// 我只指定了第一个，第二个是使用了默认参数的类型
 	p.showPerson();
 
-
-
-
-
-
-
-
-
 }
 
 
 
-int main()
+int main2()
 {
 	test02();
 	test03();
