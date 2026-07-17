@@ -16,6 +16,7 @@ public:
 
 };
 
+// 正常函数
 void myprint2(string test)
 {
 	cout << test << endl;
@@ -26,7 +27,7 @@ void myprint2(string test)
 void te()
 {
 	myPrint myprint;
-	myprint("HelloWorld");	// 使用起来类似函数调用，因此成为仿函数
+	myprint("HelloWorld");	// 使用起来类似函数调用，因此称为仿函数
 	myprint2("HelloWorld");
 }
 
@@ -40,9 +41,6 @@ public:
 	{
 		return num1 + num2;
 	}
-
-
-
 };
 
 

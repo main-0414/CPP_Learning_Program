@@ -19,16 +19,13 @@ class Son:public Base<int>		// 要写<>告诉类型
 };
 
 
-
 void test08()
 {
-	Son s1;
-
-
-
-
+	Son s1;		// 没有报错
 
 }
+
+
 
 
 
@@ -51,9 +48,6 @@ public:
 void test09()
 {
 	Son2<int, char> s2;
-
-
-
 
 }
 
