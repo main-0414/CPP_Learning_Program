@@ -29,7 +29,7 @@ void test08()
 
 
 
-// 如果想灵活指定父类中的数据类型，子类也需要变类模板
+// 如果想灵活指定父类中的数据类型，子类 也需要变 类模板
 template<class T1,class T2>
 class Son2 :public Base<T2>
 {
@@ -47,6 +47,7 @@ public:
 
 void test09()
 {
+
 	Son2<int, char> s2;
 
 }
@@ -55,7 +56,7 @@ void test09()
 
 
 
-int main()
+int main5()
 {
 	test08();
 	test09();
