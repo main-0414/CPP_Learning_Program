@@ -145,6 +145,11 @@
     <ClCompile Include="04 类模板对象做函数参数.cpp" />
     <ClCompile Include="05 类模板与继承.cpp" />
     <ClCompile Include="06 类模板成员函数在类外实现.cpp" />
+    <ClCompile Include="07 类模板分文件编写.cpp" />
+    <ClCompile Include="HUMAN.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HUMAN.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

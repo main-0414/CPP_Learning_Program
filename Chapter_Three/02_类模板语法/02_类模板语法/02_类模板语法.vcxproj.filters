@@ -33,5 +33,16 @@
     <ClCompile Include="06 类模板成员函数在类外实现.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="07 类模板分文件编写.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HUMAN.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HUMAN.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

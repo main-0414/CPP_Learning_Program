@@ -48,7 +48,7 @@ void test10()
 
 
 
-int main()
+int main6()
 {
 	test10();
 
