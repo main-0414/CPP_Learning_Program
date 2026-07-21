@@ -15,7 +15,7 @@ public:
 
 	T1 m_Name;
 	T2 m_Age;
-
+	 
 };
 
 template<class T1, class T2>
