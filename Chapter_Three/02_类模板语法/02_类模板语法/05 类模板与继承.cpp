@@ -13,9 +13,9 @@ public:
 
 
 //class Son :public Base		// 错误：必须要知道父类中T的类型，才能继承给子类
-class Son:public Base<int>		// 要写<>告诉类型
+class Son :public Base<int>		// 要写<>告诉类型
 {
-	
+
 };
 
 
@@ -30,7 +30,7 @@ void test08()
 
 
 // 如果想灵活指定父类中的数据类型，子类 也需要变 类模板
-template<class T1,class T2>
+template<class T1, class T2>
 class Son2 :public Base<T2>
 {
 public:

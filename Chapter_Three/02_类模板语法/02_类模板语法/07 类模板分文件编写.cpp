@@ -50,7 +50,7 @@ void test11()
 
 
 
-int main()
+int main7()
 {
 	test11();
 
