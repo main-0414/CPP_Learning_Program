@@ -130,8 +130,6 @@ void test02()
 	// 打印数组大小
 	cout << "arr大小为：" << arr.getSize() << endl;
 
-
-
 }
 
 
@@ -140,8 +138,6 @@ int main()
 	test01();
 	cout << endl;
 	test02();
-
-
 
 	system("pause");
 	return 0;
