@@ -11,19 +11,20 @@ public:
 	// 有参构造 参数：容量
 	MyArray(int capacity)
 		:m_Capacity(capacity),
-		m_Size(0),
-		arrayPoint(new T[m_Capacity])
+		m_Size(0)
 	{
 		//cout << "MyArray有参构造调用！" << endl;
+		arrayPoint = new T[m_Capacity];
 	}
 
 
 
 	// 拷贝构造
 	MyArray(const MyArray& arr)
-		:m_Capacity(arr.m_Capacity), m_Size(arr.m_Size)	// 不能直接浅拷贝数组
+		:m_Capacity(arr.m_Capacity),
+		m_Size(arr.m_Size)
+		// 不能直接浅拷贝数组
 	{
-		//cout << "MyArray拷贝构造调用！" << endl;
 		// 深拷贝，重新在堆区开辟数据
 		arrayPoint = new T[arr.m_Capacity];
 
@@ -75,6 +76,65 @@ public:
 		}
 
 		return *this;	// 返回自身
+	}
+
+
+
+	// 尾插法	从尾部推入一个元素
+	void Push_Back(const T& val)	// 只读借用，避免复制
+	{
+		// 判断容量是否还有空位
+		if (m_Capacity == m_Size)
+		{
+			return;
+		}
+
+		arrayPoint[m_Size] = val;	// 将传入数据插入数组后一个位置
+
+		m_Size++;	// 更新大小
+
+	}
+
+
+	// 尾删法
+	void Pop_Back()	// 从尾部弹出一个元素
+	{
+		// 让用户访问不到最后一个元素，即为尾删，逻辑删除
+		if (m_Size == 0)
+		{
+			return;
+		}
+
+		m_Size--;
+	}
+
+
+	// 通过下标方式访问数组中的元素（重载[]运算符）	arr[0]	
+	T& operator[](int index)	// 为了让它能作为一个左值存在，得返回一个引用 arr[0]=100;
+	{
+		if (index >= m_Size || index < 0)
+		{
+			throw out_of_range("数组越界");	// throw= 抛出错误，out_of_range= 越界错误类型，"数组越界"= 错误提示
+		}
+
+		return arrayPoint[index];
+	}
+
+
+
+
+
+
+	// 返回数组容量
+	int getCapacity()
+	{
+		return m_Capacity;
+	}
+
+	// 返回数组大小
+	int getSize()
+	{
+		return m_Size;
 	}
 
 
