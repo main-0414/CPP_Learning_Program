@@ -18,5 +18,8 @@
     <ClCompile Include="01 STL基本概念.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="02 vector存放内置数据类型.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

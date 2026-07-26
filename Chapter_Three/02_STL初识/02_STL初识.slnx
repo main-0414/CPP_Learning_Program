@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="02_STL初识/02_STL初识.vcxproj" />
+  <Project Path="02_STL初识/02_STL初识.vcxproj" Id="85dfa0e0-53d2-4fa3-a1bb-0a8203984beb" />
 </Solution>
