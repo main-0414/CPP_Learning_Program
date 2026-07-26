@@ -7,11 +7,15 @@ using namespace std;
 // vector存放内置数据类型
 // 容器：vector
 // 算法：for_each
-// 迭代器：vector<int>::iterator
+// 迭代器：vector<int>::iterator		每个容器都有专属的编译器 vector 的容器叫 iterator
 
 //vector<int>		这代表：	一个存放 int 类型数据的 vector 容器。
 //vector<int>::iterator   意思是：vector<int> 这个类里面定义的一种类型，叫 iterator。这里的 :: 是作用域运算符。
 //iterator	中文叫 迭代器。你可以暂时理解成：类似指针一样，用来访问容器元素的东西。
+
+
+
+
 
 void myPrint(int val)
 {
@@ -43,7 +47,7 @@ void test01()
 
 	// itBegin/itEnd 不是元素的值，也不是数组下标，它本质上是一个“类似指针的对象”，保存了当前元素的位置。
 	// 迭代器（iterator）是一种封装后的指针。
-	//迭代器 itBegin/itEnd 像一个“智能指针”，它不保存数据本身，而是保存访问数据的位置；加 * 才能拿到数据。
+	// 迭代器 itBegin/itEnd 像一个“智能指针”，它不保存数据本身，而是保存访问数据的位置；加 * 才能拿到数据。
 
 
 
@@ -100,7 +104,7 @@ void test01()
 
 
 
-int main()
+int main2()
 {
 	test01();
 
