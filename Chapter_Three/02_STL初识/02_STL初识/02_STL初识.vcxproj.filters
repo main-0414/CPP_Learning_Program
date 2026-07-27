@@ -24,5 +24,8 @@
     <ClCompile Include="03 vector容器中存放自定义数据类型.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="04 容器嵌套容器.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

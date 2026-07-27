@@ -26,12 +26,14 @@ void test02()
 	Person p4("ddd", 20);
 	Person p5("eee", 10);
 
+
 	// 向容器中添加数据
 	v.push_back(p1);
 	v.push_back(p2);
 	v.push_back(p3);
 	v.push_back(p4);
 	v.push_back(p5);
+
 
 
 	// 便利容器中的数据
@@ -78,7 +80,7 @@ void test03()
 
 
 
-int main()
+int main3()
 {
 	//test02();
 	test03();
