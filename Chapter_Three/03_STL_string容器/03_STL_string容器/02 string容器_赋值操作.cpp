@@ -66,7 +66,7 @@ void test02()
 
 
 
-int main()
+int main2()
 {
 	test02();
 
