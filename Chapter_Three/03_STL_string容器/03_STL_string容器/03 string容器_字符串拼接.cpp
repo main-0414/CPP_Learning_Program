@@ -40,16 +40,19 @@ void test03()
 	// I Love gamePUBG LOL
 	cout << "str3 = " << str3 << endl;
 
-	// str2截取第0到第4个字符，拼接到str3后面
+
+
+
+	// str2截取第0到第4个字符，拼接到str4后面
 	string str4 = "I Love game:";
-	str4.append(str2, 0, 4);
+	str4.append(str2, 0, 4);	// 只截取"PUBG"
 	cout << "str4 = " << str4 << endl;
 }
 
 
 
 
-int main()
+int main3()
 {
 	test03();
 
