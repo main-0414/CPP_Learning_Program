@@ -33,8 +33,12 @@ void test10()
 
 	// 截取 sina.com
 	int sum = email.size();
-	string host = email.substr(index + 1, sum);
+	string host = email.substr(index + 1);
 	cout << "host = " << host << endl;
+
+
+
+	// substr(只填一个开始位置参数)   表示从这里一直截取到字符串末尾。
 }
 
 
