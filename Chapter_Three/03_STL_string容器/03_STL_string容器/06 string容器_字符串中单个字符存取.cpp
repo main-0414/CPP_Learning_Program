@@ -1,7 +1,6 @@
 ﻿#include <iostream>
 using namespace std;
 
-
 // string 字符串存取
 
 // 1. []
