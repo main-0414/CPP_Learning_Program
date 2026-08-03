@@ -42,7 +42,7 @@ void test07()
 
 
 
-int main()
+int main6()
 {
 	test07();
 
