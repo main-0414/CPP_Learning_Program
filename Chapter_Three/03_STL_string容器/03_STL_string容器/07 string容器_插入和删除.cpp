@@ -32,10 +32,7 @@ void test08()
 
 
 
-
-
-
-int main()
+int main7()
 {
 	test08();
 

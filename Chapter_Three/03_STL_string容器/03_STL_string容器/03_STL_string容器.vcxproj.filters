@@ -36,5 +36,8 @@
     <ClCompile Include="07 string容器_插入和删除.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="08 string容器_截取子串.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
