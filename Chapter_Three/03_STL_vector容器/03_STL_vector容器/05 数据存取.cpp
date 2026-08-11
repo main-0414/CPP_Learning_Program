@@ -23,7 +23,7 @@ void test05()
 		v1.push_back(i);
 	}
 
-	// 1. 利用 [i] 方式来访问容器中的元素
+	// 1. 利用 [] 方式来访问容器中的元素
 	for (int i = 0; i < v1.size(); i++)
 	{
 		cout << v1[i] << " ";
@@ -49,7 +49,7 @@ void test05()
 
 
 
-int main()
+int main5()
 {
 	test05();
 

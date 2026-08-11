@@ -30,5 +30,11 @@
     <ClCompile Include="05 数据存取.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="06 容器互换.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="07 预留空间.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

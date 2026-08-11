@@ -16,8 +16,6 @@ void printVector3(vector<int>& v)
 
 
 
-
-
 // vector容器的容量大小和操作
 void test03()
 {
