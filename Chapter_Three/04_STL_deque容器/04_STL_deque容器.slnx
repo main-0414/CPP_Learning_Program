@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="04_STL_deque容器/04_STL_deque容器.vcxproj" Id="5f524cdd-a5fd-403d-9f56-4a4fb28a4d99" />
+</Solution>
