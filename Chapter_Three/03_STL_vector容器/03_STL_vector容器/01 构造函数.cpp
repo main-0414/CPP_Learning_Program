@@ -17,9 +17,10 @@ using namespace std;
 // 写一个打印函数方便测试打印
 void printVector(vector<int>& v)
 {
+	// iterator：用来指向容器中的元素，并且可以移动。iterator就是STL提供的一种“智能指针”，用来遍历和定位容器中的元素。
 	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
 	{
-		cout << *it << " ";
+		cout << *it << " ";	// 取出迭代器指向位置的数据（it 迭代器变量）
 	}
 	cout << endl;
 }

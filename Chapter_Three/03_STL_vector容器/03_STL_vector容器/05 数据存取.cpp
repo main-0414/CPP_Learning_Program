@@ -1,0 +1,60 @@
+﻿#include <iostream>
+using namespace std;
+#include <vector>
+
+// vector的数据存取
+
+/*
+	at(int idx);         //返回索引idx所指的数据
+	operator[];`         //返回索引idx所指的数据
+	front();             //返回容器中第一个数据元素
+	back();              //返回容器中最后一个数据元素
+*/
+
+
+
+void test05()
+{
+	vector<int> v1;
+
+	// 装填 0 - 9 数值
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+	}
+
+	// 1. 利用 [i] 方式来访问容器中的元素
+	for (int i = 0; i < v1.size(); i++)
+	{
+		cout << v1[i] << " ";
+	}
+	cout << endl;
+
+
+	// 2. 利用 at 来访问元素
+	for (int i = 0; i < v1.size(); i++)
+	{
+		cout << v1.at(i) << " ";	// 在……位置（at a position）
+	}
+	cout << endl;
+
+
+	// 3. 获取第一个元素
+	cout << "第一个元素：" << v1.front() << endl;
+
+
+	// 4. 获取最后一个元素
+	cout << "最后一个元素：" << v1.back() << endl;
+}
+
+
+
+int main()
+{
+	test05();
+
+
+
+	system("pause");
+	return 0;
+}

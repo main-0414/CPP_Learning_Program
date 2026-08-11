@@ -72,7 +72,7 @@ void test03()
 
 
 
-int main()
+int main3()
 {
 	test03();
 

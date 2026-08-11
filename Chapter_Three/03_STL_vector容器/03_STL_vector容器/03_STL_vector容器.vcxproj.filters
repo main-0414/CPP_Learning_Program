@@ -24,5 +24,11 @@
     <ClCompile Include="03 容量和大小.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="04 插入和删除.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="05 数据存取.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
