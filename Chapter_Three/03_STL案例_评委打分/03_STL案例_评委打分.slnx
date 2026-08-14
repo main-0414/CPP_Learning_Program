@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="03_STL案例_评委打分/03_STL案例_评委打分.vcxproj" />
+</Solution>

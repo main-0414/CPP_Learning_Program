@@ -9,6 +9,8 @@ using namespace std;
 //string& append(const string& s);                    //同operator+=(const string& str)
 //string& append(const string& s, int pos, int n);`	// 字符串s中从pos开始的n个字符连接到字符串结尾
 
+//  string& append(size_t n, char c);	// append(数量, 字符)
+
 void test03()
 {
 	string str1 = "我爱";
