@@ -18,5 +18,28 @@
     <ClCompile Include="01 list概念 与 构造函数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="02 赋值 和 交换.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="03 大小操作.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="04 插入 和 删除.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="printList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="05 数据存取.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="06 反转和排序.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="printList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

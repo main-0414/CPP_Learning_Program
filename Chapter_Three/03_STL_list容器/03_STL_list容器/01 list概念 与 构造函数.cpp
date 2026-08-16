@@ -48,8 +48,6 @@ void test01()
 	L1.push_back(20);
 	L1.push_back(30);
 	L1.push_back(40);
-
-	// 遍历容器
 	printList(L1);
 
 
@@ -72,7 +70,7 @@ void test01()
 
 
 
-int main()
+int main1()
 {
 	test01();
 
