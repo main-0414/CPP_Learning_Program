@@ -22,7 +22,6 @@ void test07()
 
 	Print_list(L1);
 
-
 }
 
 
