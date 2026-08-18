@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="03_STL_set and multiset容器/03_STL_set and multiset容器.vcxproj" />
+</Solution>

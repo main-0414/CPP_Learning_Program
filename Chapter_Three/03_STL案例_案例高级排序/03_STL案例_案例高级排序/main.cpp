@@ -8,11 +8,13 @@ using namespace std;
 // list容器 排序容器 对于自定义数据类型做排序
 // 按照年龄进行升序，如果年龄相同按照身高进行降序
 
+
+
 // 指定排序规则
 bool comparePerson(Person& p1, Person& p2)
 {
 	// 按照年龄 升序
-	if (p1.m_Age==p2.m_Age)
+	if (p1.m_Age == p2.m_Age)
 	{
 		//年龄相同 按照升高排序
 		return p1.m_Height > p2.m_Height;
