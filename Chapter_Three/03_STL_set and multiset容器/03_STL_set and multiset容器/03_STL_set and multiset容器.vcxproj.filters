@@ -27,6 +27,9 @@
     <ClCompile Include="03 set 插入和删除.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="04 set 查找和统计.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="printSet.h">

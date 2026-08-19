@@ -142,6 +142,7 @@
     <ClCompile Include="01 set 构造和赋值.cpp" />
     <ClCompile Include="02 set 大小和交换.cpp" />
     <ClCompile Include="03 set 插入和删除.cpp" />
+    <ClCompile Include="04 set 查找和统计.cpp" />
     <ClCompile Include="printSet.cpp" />
   </ItemGroup>
   <ItemGroup>
