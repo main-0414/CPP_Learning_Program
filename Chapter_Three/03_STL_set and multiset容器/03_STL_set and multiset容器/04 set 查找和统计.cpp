@@ -51,6 +51,7 @@ void test06()
 	s1.insert(10);
 
 	int num = s1.count(30);	// 统计30的个数
+
 	cout << "num = " << num << endl;	
 	// set容器每个元素只允许有一个，所以实际上结果只有1 or 0
 
@@ -63,7 +64,7 @@ void test06()
 
 
 
-int main()
+int main4()
 {
 	test05();
 	test06();

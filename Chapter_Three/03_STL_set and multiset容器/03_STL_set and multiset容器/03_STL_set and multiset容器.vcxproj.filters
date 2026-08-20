@@ -30,6 +30,18 @@
     <ClCompile Include="04 set 查找和统计.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="05 set 和 multiset区别.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="06 pair对组的创建.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="07 set排序规则.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="7.1 set自定义数据类型排序.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="printSet.h">
