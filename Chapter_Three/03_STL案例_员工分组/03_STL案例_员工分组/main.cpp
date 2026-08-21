@@ -41,7 +41,7 @@ void createWorker(vector<Worker>& v)
 }
 
 
-// 员工分组
+// 分部门
 void setGroup(vector<Worker>& v, multimap<int, Worker>& m)
 {
 	for (vector<Worker>::iterator it = v.begin(); it != v.end(); it++)

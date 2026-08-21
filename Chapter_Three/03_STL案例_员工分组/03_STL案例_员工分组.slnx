@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="03_STL案例_员工分组/03_STL案例_员工分组.vcxproj" />
+  <Project Path="03_STL案例_员工分组/03_STL案例_员工分组.vcxproj" Id="44a8a900-661e-45d1-9f73-337fa205a6c0" />
 </Solution>
