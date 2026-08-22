@@ -5,7 +5,7 @@ using namespace std;
 class myCompare
 {
 public:
-	bool operator()(int v1, int v2) const
+	bool operator()(int v1, int v2) const	//STL容器保存比较器对象时，为了保证比较过程不会修改比较器，通常会以const方式调用它；而const对象只能调用const成员函数，所以仿函数的 operator() 通常必须加 const。
 	{
 		// 降序
 		return v1 > v2;

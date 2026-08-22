@@ -32,7 +32,7 @@ void test01()
 	}
 
 	// 查找容器中 有没有大于5的数字
-	// GreaterFive()	匿名函数对象		// 第三个参数：Pred 函数对象
+	// GreaterFive()	匿名函数对象		// 第三个参数：Pred 谓词（函数对象）
 	vector<int>::iterator it = find_if(v.begin(), v.end(), GreaterFive());	// 找到了返回该数迭代器，没找到返回end()迭代器
 
 	if (it == v.end())
@@ -48,15 +48,7 @@ void test01()
 
 
 
-
-
-
-
-
-
-
-
-int main()
+int main1()
 {
 	test01();
 

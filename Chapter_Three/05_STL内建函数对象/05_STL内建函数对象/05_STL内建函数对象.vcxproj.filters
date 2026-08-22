@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="01 一元谓词.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="02 二元谓词.cpp">
+    <ClCompile Include="01 算数仿函数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

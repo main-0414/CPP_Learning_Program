@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="03_STL_map and multimap 容器/03_STL_map and multimap 容器.vcxproj" />
+  <Project Path="03_STL_map and multimap 容器/03_STL_map and multimap 容器.vcxproj" Id="3491dbb9-96c4-48e4-b66f-8a5f0f61e93e" />
 </Solution>
