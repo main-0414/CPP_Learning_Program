@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="04_STL函数对象_谓词/04_STL函数对象_谓词.vcxproj" />
+</Solution>

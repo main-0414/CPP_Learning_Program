@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="04_STL函数对象/04_STL函数对象.vcxproj" />
+  <Project Path="04_STL函数对象/04_STL函数对象.vcxproj" Id="c284efe6-edac-492a-91b7-86f15a30d10c" />
 </Solution>
