@@ -27,8 +27,8 @@ void test01()
 {
 	negate<int> n;	// negate取反
 
-	cout << n(50) << endl;	// 一元
-
+	cout << n(50) + 20 << endl;	// 一元
+	// -30
 
 }
 
@@ -37,8 +37,8 @@ void test02()
 {
 	plus<double> p;	// 默认传入同一种类型，所以只用写一个类型
 
-	cout << p(10, 20) << endl;
-
+	cout << p(10.235, 20) << endl;
+	
 }
 
 
@@ -51,7 +51,7 @@ void test02()
 
 
 
-int main()
+int main1()
 {
 	test01();
 	test02();
