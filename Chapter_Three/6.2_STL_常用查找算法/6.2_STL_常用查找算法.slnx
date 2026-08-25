@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="6.1_STL_常用查找算法/6.1_STL_常用查找算法.vcxproj" Id="56e64665-9316-4a52-ba23-a4f16a2e905e" />
+</Solution>

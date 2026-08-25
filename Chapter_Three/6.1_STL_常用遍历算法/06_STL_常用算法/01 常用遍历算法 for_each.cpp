@@ -49,11 +49,22 @@ void test01()
 	}
 	
 	for_each(v.begin(), v.end(), print01);
-	// for_each(起始迭代器，结束迭代器，函数or仿函数)
+	// for_each(起始迭代器，结束迭代器，打印函数or仿函数)
 
 	cout << endl;
 
 	for_each(v.begin(), v.end(), print02());
+
+	cout << endl;
+
+	for_each(
+		v.begin(),
+		v.end(),
+		[](int val)
+		{
+			cout << val << " ";
+		}
+	);
 
 	cout << endl;
 }
@@ -65,7 +76,7 @@ void test01()
 
 
 
-int main1()
+int main()
 {
 	test01();
 

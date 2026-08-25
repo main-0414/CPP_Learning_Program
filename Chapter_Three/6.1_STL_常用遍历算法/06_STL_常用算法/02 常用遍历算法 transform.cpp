@@ -54,7 +54,8 @@ void test02()
 
 	//transform(v.begin(), v.end(), vTarget.begin(), Transform());
 	//transform(v.begin(), v.end(), vTarget.begin(), TransformFunc);
-	transform(v.begin(), 
+	transform(
+		v.begin(), 
 		v.end(), 
 		vTarget.begin(), 
 		[](int val)
@@ -63,7 +64,7 @@ void test02()
 		}
 		);
 
-	for_each(vTarget.begin(), vTarget.end(),print());
+	for_each(vTarget.begin(), vTarget.end(), print());
 
 	cout << endl;
 
@@ -73,7 +74,7 @@ void test02()
 
 
 
-int main()
+int main2()
 {
 	test02();
 
