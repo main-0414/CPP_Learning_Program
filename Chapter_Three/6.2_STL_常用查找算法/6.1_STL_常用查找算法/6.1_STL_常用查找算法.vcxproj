@@ -141,6 +141,10 @@
   <ItemGroup>
     <ClCompile Include="01 find.cpp" />
     <ClCompile Include="02 find_if.cpp" />
+    <ClCompile Include="03 adjacent_find.cpp" />
+    <ClCompile Include="04 binary_search.cpp" />
+    <ClCompile Include="05 count.cpp" />
+    <ClCompile Include="06 count_if.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
