@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="6.5_STL_常用算数生成算法/6.5_STL_常用算数生成算法.vcxproj" />
+</Solution>
