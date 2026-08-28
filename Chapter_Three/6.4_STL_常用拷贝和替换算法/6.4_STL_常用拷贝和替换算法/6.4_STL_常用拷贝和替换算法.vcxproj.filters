@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="01 sort.cpp">
+    <ClCompile Include="01 copy.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="02 random_shuffle.cpp">
+    <ClCompile Include="02 replace.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="03 merge.cpp">
+    <ClCompile Include="03 replace_if.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="04 reverse.cpp">
+    <ClCompile Include="04 swap.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

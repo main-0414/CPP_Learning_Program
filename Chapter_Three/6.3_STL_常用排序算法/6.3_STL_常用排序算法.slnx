@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="6.3_STL_常用排序算法/6.3_STL_常用排序算法.vcxproj" />
+  <Project Path="6.3_STL_常用排序算法/6.3_STL_常用排序算法.vcxproj" Id="27f303ef-bd71-4d10-b8ba-70e3f25b3f23" />
 </Solution>
