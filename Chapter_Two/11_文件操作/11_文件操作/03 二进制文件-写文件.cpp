@@ -29,8 +29,9 @@ void test03()
 	Person p = { "张三",18 };
 	// 函数原型 ：ostream& write(const char * buffer,int len);
 	// 从 p 这个对象所占内存的起始位置开始，取出 sizeof(Person) 个字节，原样写入文件流 ofs。
-	ofs.write((const char*)&p, sizeof(Person));
-
+	ofs.write((const char*)&p, sizeof(p));
+	//	write(地址, 写多少字节);
+	//	把对象 p 在内存中的所有字节原封不动写入文件。
 
 	// 5.关闭文件
 	ofs.close();

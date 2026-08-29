@@ -10,9 +10,6 @@ public:
 	char m_Name[64];	// 姓名
 	int m_Age;			// 年龄
 
-
-
-
 };
 
 
@@ -42,6 +39,8 @@ void test04()
 	// 4.读文件
 	person p;
 	ifs.read((char*)&p, sizeof(p));
+	//	read(存到哪里, 读多少字节);
+	//	从文件读取相同数量的字节，原封不动覆盖到对象 p 的内存中。
 
 	cout << "姓名：" << p.m_Name << endl << "年龄：" << p.m_Age << endl;
 
