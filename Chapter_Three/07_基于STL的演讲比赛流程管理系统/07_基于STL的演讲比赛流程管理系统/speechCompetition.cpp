@@ -56,7 +56,6 @@ void SpeechManager::speechCompetition()
 		this->m_Speaker[*it].m_Score[m_Index - 1] = avg;
 
 
-
 		// 6个人一组，打印排名，用一个自动排序的容器存储
 		groupScore.insert(make_pair(avg, *it));
 
