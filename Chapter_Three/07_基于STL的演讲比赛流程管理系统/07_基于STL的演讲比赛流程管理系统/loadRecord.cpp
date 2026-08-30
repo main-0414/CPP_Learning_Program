@@ -20,6 +20,7 @@ void SpeechManager::loadRecord()
 	}
 
 
+
 	/*
 		// 判断文件是否为空：
 		// 方法一：
@@ -39,6 +40,8 @@ void SpeechManager::loadRecord()
 	// 所以不应该写 if (ifs.eof())，而是 if (ifs.peek() == EOF) （EOF:文件结束标志）
 
 
+
+
 	// 2. 文件存在无数据
 	if (ifs.peek() == EOF)
 	{
@@ -48,6 +51,8 @@ void SpeechManager::loadRecord()
 		ifs.close();
 		return;
 	}
+
+
 
 
 	// 3. 有文件有数据

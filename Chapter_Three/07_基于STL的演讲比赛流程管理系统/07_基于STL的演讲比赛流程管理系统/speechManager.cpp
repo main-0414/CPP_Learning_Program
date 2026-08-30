@@ -89,6 +89,7 @@ void SpeechManager::createSpeaker()
 }
 
 
+
 // 抽签
 void SpeechManager::speechDraw()
 {
@@ -127,6 +128,7 @@ void SpeechManager::speechDraw()
 }
 
 
+
 // 显示晋级结果
 void SpeechManager::showScore()
 {
@@ -160,6 +162,7 @@ void SpeechManager::showScore()
 
 
 }
+
 
 
 // 保存结果到文件
@@ -215,6 +218,8 @@ void SpeechManager::showRecord()
 	system("cls");
 
 }
+
+
 
 // 清空数据
 void SpeechManager::dataClear()
