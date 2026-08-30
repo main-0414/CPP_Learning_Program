@@ -24,6 +24,9 @@
     <ClCompile Include="speechCompetition.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="loadRecord.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="speechManager.h">

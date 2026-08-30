@@ -52,12 +52,12 @@ int main()
 
 		case 2:		// 查看往届比赛记录
 
-			sm.loadRecord();
+			sm.showRecord();
 			break;
 
 		case 3:		// 清空比赛记录
 
-
+			sm.dataClear();
 			break;
 
 		case 0:		// 退出系统
@@ -75,16 +75,6 @@ int main()
 
 
 
-
-
 	system("pause");
 	return 0;
 }
-
-
-
-
-
-
-
-

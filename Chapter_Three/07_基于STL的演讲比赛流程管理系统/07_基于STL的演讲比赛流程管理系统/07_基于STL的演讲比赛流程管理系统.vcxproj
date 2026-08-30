@@ -139,6 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="loadRecord.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="speechCompetition.cpp" />
     <ClCompile Include="speechManager.cpp" />

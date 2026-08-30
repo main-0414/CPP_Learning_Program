@@ -11,7 +11,7 @@
 #include <fstream>
 using namespace std;
 
-#define FILENAME "SPEECH.csv"
+const string FILENAME = "speech.csv";
 
 
 // 设计演讲管理类
@@ -23,7 +23,7 @@ public:
 	SpeechManager();
 
 	// 析构
-	~SpeechManager();
+	~SpeechManager() = default;
 
 	// 展示菜单
 	void show_Menu();
@@ -57,6 +57,12 @@ public:
 
 	// 加载数据
 	void loadRecord();
+
+	// 显示往届记录
+	void showRecord();
+
+	// 清空数据
+	void dataClear();
 
 	
 private:
