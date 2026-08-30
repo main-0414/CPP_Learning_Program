@@ -109,7 +109,8 @@ int workerManager::get_EmpNum()
 
 	int num = 0;
 
-	while (ifs >> ID >> name >> DID)	// 我们规定了"三个字段组成一个职工对象"。“>>” 通过空格来确定每个属性
+	//getline() 是：一整行全部读进一个字符串，它不会帮你拆开。
+	while (ifs >> ID >> name >> DID)	// 我们规定了"三个字段组成一个职工对象"。>> 会自动按空格、Tab、换行作为分隔符读取数据。
 	{
 		num++;
 	}

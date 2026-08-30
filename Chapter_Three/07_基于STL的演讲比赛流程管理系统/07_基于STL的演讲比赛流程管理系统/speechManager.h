@@ -8,8 +8,10 @@
 #include <numeric>
 #include <random>
 #include <iomanip>
+#include <fstream>
 using namespace std;
 
+#define FILENAME "SPEECH.csv"
 
 
 // 设计演讲管理类
@@ -35,7 +37,10 @@ public:
 	// 创建选手
 	void createSpeaker();
 
-	// 开始比赛
+	// 封装初始化和创建选手功能
+	void reset();
+
+	// 开始比赛框架
 	void startSpeech();
 
 	// 抽签功能
@@ -43,6 +48,15 @@ public:
 
 	// 比赛实现
 	void speechCompetition();
+
+	// 显示晋级结果
+	void showScore();
+
+	// 保存结果到文件
+	void saveRecord();
+
+	// 加载数据
+	void loadRecord();
 
 	
 private:
@@ -64,4 +78,10 @@ private:
 
 	// 随机数引擎
 	mt19937 gen{ random_device{}() };
+
+	// 判断文件是否为空标记
+	bool m_FileIsEmpty;
+
+	// 存放往届记录的容器（第几届,数据）
+	map<int, vector<string>> m_Record;
 };
