@@ -58,9 +58,10 @@ void Login(string FileName, int type)
 			if (fID == ID && fName == name && fPassword == password)
 			{
 				cout << "学生验证登录成功！" << endl;
+
 				finish();
 
-				// 将学生放到内存里
+				// 创建该身份的对象
 				person = new Student(ID, name, password);
 
 				// 进入学生身份子菜单
@@ -84,6 +85,8 @@ void Login(string FileName, int type)
 			{
 				cout << "老师验证登录成功！" << endl;
 
+				finish();
+
 				person = new Teacher(ID, name, password);
 
 
@@ -105,6 +108,9 @@ void Login(string FileName, int type)
 			if (fName == name && fPassword == password)
 			{
 				cout << "管理员验证登录成功！" << endl;
+
+				// 跳转界面前先清屏
+				finish();
 
 				person = new Manager(name, password);
 
