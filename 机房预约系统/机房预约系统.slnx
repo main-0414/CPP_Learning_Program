@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="机房预约系统/机房预约系统.vcxproj" Id="45fc3fc0-5dc1-47ee-b0e7-de160e9d6b30" />
+</Solution>
