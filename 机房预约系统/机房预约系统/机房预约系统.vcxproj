@@ -146,6 +146,7 @@
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="managerMenu.cpp" />
     <ClCompile Include="student.cpp" />
+    <ClCompile Include="studentMenu.cpp" />
     <ClCompile Include="teacher.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +156,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="computerRoom.h" />
     <ClInclude Include="finish.h" />
     <ClInclude Include="globalFile.h" />
     <ClInclude Include="Identity.h" />
@@ -163,6 +165,7 @@
     <ClInclude Include="manager.h" />
     <ClInclude Include="managerMenu.h" />
     <ClInclude Include="student.h" />
+    <ClInclude Include="studentMenu.h" />
     <ClInclude Include="teacher.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

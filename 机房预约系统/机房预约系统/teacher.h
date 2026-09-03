@@ -23,5 +23,5 @@ public:
 
 
 
-	int m_Empid;
+	int m_EmpID;
 };

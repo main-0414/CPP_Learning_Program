@@ -10,6 +10,7 @@ using namespace std;
 #include "teacher.h"
 #include "manager.h"
 #include "managerMenu.h"
+#include "studentMenu.h"
 
 
 

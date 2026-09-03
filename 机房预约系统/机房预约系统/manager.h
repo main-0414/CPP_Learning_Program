@@ -8,6 +8,8 @@ using namespace std;
 #include <vector>
 #include "teacher.h"
 #include "student.h"
+#include <algorithm>
+#include "computerRoom.h"
 
 
 class Manager:public Identity
@@ -37,6 +39,9 @@ public:
 	// 初始化容器
 	void initVector();
 
+	// 初始化机房
+	void initRoom();
+
 	// 检测重复
 	bool checkRepeat(int ID, int type);
 
@@ -48,5 +53,6 @@ private:
 	// 老师容器
 	vector<Teacher> vTeacher;
 
-
+	// 机房容器，用于保存机房信息
+	vector<computerRoom> vRoom;
 };

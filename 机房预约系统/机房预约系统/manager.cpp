@@ -17,14 +17,21 @@ Manager::Manager(string name, string password)
 
 	// 初始化容器
 	this->initVector();
+
+	// 初始化机房
+	this->initRoom();
 }
 
 
 // 初始化容器
 void Manager::initVector()
 {
-	// 读取老师和学生的信息
+	// 清空容器重新读、写
+	vStudent.clear();
+	vTeacher.clear();
 
+
+	// 初始化学生信息
 	ifstream ifs(STUDENT_FILE, ios::in);
 
 	if (!ifs.is_open())
@@ -32,11 +39,6 @@ void Manager::initVector()
 		cout << "学生文件读取失败！" << endl;
 		return;
 	}
-
-	// 清空容器重新读、写
-	vStudent.clear();
-	vTeacher.clear();
-
 
 	// 从文件里读取存入容器
 	Student s;
@@ -46,12 +48,12 @@ void Manager::initVector()
 		vStudent.push_back(s);
 	}
 
-	cout << "当前学生数量为：" << vStudent.size() << endl;
+	//cout << "当前学生数量为：" << vStudent.size() << endl;
 	ifs.close();
 
 
 
-
+	// 初始化老师容器
 	ifs.open(TEACHER_FILE, ios::in);
 
 	if (!ifs.is_open())
@@ -61,14 +63,30 @@ void Manager::initVector()
 	}
 
 	Teacher t;
-	while (ifs >> t.m_Empid >> t.m_Name >> t.m_Password)
+	while (ifs >> t.m_EmpID >> t.m_Name >> t.m_Password)
 	{
 		vTeacher.push_back(t);
 	}
-	cout << "当前老师数量为：" << vTeacher.size() << endl;
+
+	//cout << "当前老师数量为：" << vTeacher.size() << endl;
 	ifs.close();
 
+}
 
+
+// 初始化机房
+void Manager::initRoom()
+{
+	ifstream ifs(COMPUTER_FILE, ios::in);
+
+	computerRoom c;
+
+	while (ifs >> c.m_RoomID >> c.m_RoomMAX)
+	{
+		vRoom.push_back(c);
+	}
+
+	ifs.close();
 }
 
 
@@ -76,7 +94,7 @@ void Manager::initVector()
 void Manager::operMenu()
 {
 	cout << "欢迎管理员：" << this->m_Name << "登录！" << endl;
-	cout << "\t\t ---------------------------------\n";
+	cout << "\t\t --------------------------------\n";
 	cout << "\t\t|                                |\n";
 	cout << "\t\t|          1.添加账号            |\n";
 	cout << "\t\t|                                |\n";
@@ -88,7 +106,7 @@ void Manager::operMenu()
 	cout << "\t\t|                                |\n";
 	cout << "\t\t|          0.注销登录            |\n";
 	cout << "\t\t|                                |\n";
-	cout << "\t\t ---------------------------------\n";
+	cout << "\t\t --------------------------------\n";
 	cout << "请选择您的操作： " << endl;
 }
 
@@ -97,7 +115,7 @@ void Manager::operMenu()
 void Manager::addPerson()
 {
 	int select = 0;
-	
+
 
 	while (true)
 	{
@@ -107,11 +125,11 @@ void Manager::addPerson()
 
 		cin >> select;
 
-		if (select==1 || select==2)
+		if (select == 1 || select == 2)
 		{
 			break;
 		}
-		
+
 		cout << "输入错误，请重新输入！" << endl << endl;
 
 	}
@@ -122,7 +140,7 @@ void Manager::addPerson()
 	string errorTip = "";	// 重复提示
 
 
-	if (select==1)
+	if (select == 1)
 	{
 		tip = "请输入学号：";
 		fileName = STUDENT_FILE;
@@ -143,7 +161,7 @@ void Manager::addPerson()
 	{
 		cin >> ID;
 
-		if (this->checkRepeat(ID,select))
+		if (this->checkRepeat(ID, select))
 		{
 			cout << errorTip << endl;
 		}
@@ -176,25 +194,77 @@ void Manager::addPerson()
 
 }
 
+// func
+void printStudent(Student& s)
+{
+	cout << "学号：" << s.m_StuID << "   姓名：" << s.m_Name << "   密码：" << s.m_Password << endl;
+}
+
+void printTeacher(Teacher& t)
+{
+	cout << "职工号：" << t.m_EmpID << "   姓名：" << t.m_Name << "   密码：" << t.m_Password << endl;
+}
+
 
 // 查看账号
 void Manager::showPerson()
 {
+	cout << "请选择查看内容：" << endl;
+	cout << "1、查看所有学生" << endl;
+	cout << "2、查看所有老师" << endl;
 
+	int select = 0;
+
+	while (true)
+	{
+		cin >> select;
+
+		if (select == 1 || select == 2)
+		{
+			break;
+		}
+
+		cout << "请重新输入：" << endl;
+	}
+
+	if (select == 1)
+	{
+		cout << "所有学生信息如下：" << endl;
+		for_each(vStudent.begin(), vStudent.end(), printStudent);
+	}
+	else if (select == 2)
+	{
+		cout << "所有老师信息如下：" << endl;
+		for_each(vTeacher.begin(), vTeacher.end(), printTeacher);
+	}
+
+	finish();
 }
 
 
 // 查看机房信息
 void Manager::showComputerInfo()
 {
+	cout << "机房信息如下：" << endl;
 
+	for (vector<computerRoom>::iterator it = vRoom.begin(); it != vRoom.end(); it++)
+	{
+		cout << "机房编号：" << it->m_RoomID << "   机房最大容量：" << it->m_RoomMAX << endl;
+	}
+
+	finish();
 }
 
 
 // 清空预约记录
 void Manager::cleanFile()
 {
+	ofstream ofs(ORDER_FILE, ios::out | ios::trunc);
+	ofs.close();
 
+	cout << "清空成功" << endl;
+
+	finish();
 }
 
 
@@ -203,11 +273,11 @@ void Manager::cleanFile()
 // 检查重复
 bool Manager::checkRepeat(int ID, int type)
 {
-	if (type==1)
+	if (type == 1)
 	{
 		for (vector<Student>::iterator it = vStudent.begin(); it != vStudent.end(); it++)
 		{
-			if (ID==it->m_StuID)
+			if (ID == it->m_StuID)
 			{
 				return true;
 			}
@@ -217,7 +287,7 @@ bool Manager::checkRepeat(int ID, int type)
 	{
 		for (vector<Teacher>::iterator it = vTeacher.begin(); it != vTeacher.end(); it++)
 		{
-			if (ID == it->m_Empid)
+			if (ID == it->m_EmpID)
 			{
 				return true;
 			}

@@ -65,7 +65,7 @@ void Login(string FileName, int type)
 				person = new Student(ID, name, password);
 
 				// 进入学生身份子菜单
-
+				studentMenu(person);
 
 				return;
 			}

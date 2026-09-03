@@ -1,0 +1,1 @@
+data:1 interval:1 stuID:123 stuName:уехЩ roomID:1 status:0
