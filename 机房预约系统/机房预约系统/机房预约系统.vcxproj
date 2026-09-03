@@ -145,6 +145,7 @@
     <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="managerMenu.cpp" />
+    <ClCompile Include="orderFile.cpp" />
     <ClCompile Include="student.cpp" />
     <ClCompile Include="studentMenu.cpp" />
     <ClCompile Include="teacher.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="managerMenu.h" />
+    <ClInclude Include="orderFile.h" />
     <ClInclude Include="student.h" />
     <ClInclude Include="studentMenu.h" />
     <ClInclude Include="teacher.h" />

@@ -42,6 +42,9 @@
     <ClCompile Include="studentMenu.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="orderFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md">
@@ -76,10 +79,13 @@
     <ClInclude Include="managerMenu.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="computerRoom.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="studentMenu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="orderFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="computerRoom.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
