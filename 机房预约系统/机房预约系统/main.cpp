@@ -4,12 +4,6 @@
 #include "login.h"
 
 
-
-
-
-
-
-
 int main()
 {
 	while (true)
@@ -39,7 +33,7 @@ int main()
 
 		case 0:		// 退出系统
 
-			cout << "欢迎下次使用：" << endl;
+			cout << "-----欢迎下次使用！-----" << endl;
 			system("pause");
 			return 0;
 		

@@ -12,7 +12,17 @@ void managerMenu(Identity*& manager)
 		
 
 		int select = 0;
-		cin >> select;
+		while (true)
+		{
+			cin >> select;
+
+			if (select >= 0 && select <= 4)
+			{
+				break;
+			}
+
+			cout << "输入有误！请重新输入：" << endl;
+		}
 
 
 		if (select==1)			// 添加账号
@@ -39,7 +49,7 @@ void managerMenu(Identity*& manager)
 		else					// 注销登录
 		{
 			delete manager;	// 销毁堆区对象
-			cout << "注销成功！" << endl;
+			cout << "-----注销成功！-----" << endl;
 			finish();
 			return;
 		}

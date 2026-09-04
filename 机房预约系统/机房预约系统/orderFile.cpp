@@ -46,16 +46,8 @@ OrderFile::OrderFile()
 
 	ifs.close();
 
-
-	//for (map<int,map<string,string>>::iterator it = m_orderData.begin(); it != m_orderData.end(); it++)
-	//{
-	//	cout << "条数 = " << it->first << "   value = " << endl;
-	//	for (map<string,string>::iterator mit = it->second.begin(); mit != it->second.end(); mit++)
-	//	{
-	//		cout << "key = " << mit->first << "   value = " << mit->second << endl;
-	//	}
-	//}
 }
+
 
 // 更新预约记录
 void OrderFile::updataOrder()
@@ -78,9 +70,6 @@ void OrderFile::updataOrder()
 				<< "status:" << m_orderData[i]["status"] << " " << endl;
 		}
 	}
-
-
-
 
 }
 

@@ -9,7 +9,18 @@ void studentMenu(Identity*& student)
 		Student* s = (Student*)student;
 
 		int select = 0;
-		cin >> select;
+
+		while (true)
+		{
+			cin >> select;
+
+			if (select >= 0 && select <= 4)
+			{
+				break;
+			}
+
+			cout << "输入有误！请重新输入：" << endl;
+		}
 
 		if (select==1)		// 申请预约
 		{
@@ -26,9 +37,14 @@ void studentMenu(Identity*& student)
 			cout << "-----查看所有预约-----" << endl;
 			s->showAllOrder();
 		}
+		else if (select==4)	// 取消预约
+		{
+			cout << "-----取消预约-----" << endl;
+			s->cancelOrder();
+		}
 		else
 		{
-			cout << "注销账号" << endl;
+			cout << "-----注销成功！-----" << endl;
 			delete student;
 			finish();
 			return;

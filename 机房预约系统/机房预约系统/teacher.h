@@ -2,6 +2,11 @@
 using namespace std;
 #include <iostream>
 #include "Identity.h"
+#include "finish.h"
+#include <string>
+#include "orderFile.h"
+#include <fstream>
+
 
 class Teacher:public Identity
 {

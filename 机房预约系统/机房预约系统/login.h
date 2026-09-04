@@ -11,6 +11,7 @@ using namespace std;
 #include "manager.h"
 #include "managerMenu.h"
 #include "studentMenu.h"
+#include "teacherMenu.h"
 
 
 

@@ -18,7 +18,7 @@ Student::Student(int ID, string name, string password)
 	this->m_Password = password;
 
 	// 初始化机房信息
-	initRoom();
+	this->initRoom();
 }
 
 // 初始化机房
@@ -196,7 +196,7 @@ void Student::showAllOrder()
 {
 	OrderFile of;
 
-	if (of.m_Num==0)
+	if (of.m_Num == 0)
 	{
 		cout << "无任何预约！" << endl;
 		finish();
@@ -228,9 +228,9 @@ void Student::showAllOrder()
 
 		cout << i + 1 << "、";
 		cout << "预约日期：周" << of.m_orderData[i]["date"]
-			<<"   学号："<<of.m_orderData[i]["stuID"]
-			<<"   姓名："<<of.m_orderData[i]["stuName"]
-			<< "   时间段：" << (of.m_orderData[i]["iterval"] == "1" ? "上午" : "下午")
+			<< "   学号：" << of.m_orderData[i]["stuID"]
+			<< "   姓名：" << of.m_orderData[i]["stuName"]
+			<< "   时间段：" << (of.m_orderData[i]["interval"] == "1" ? "上午" : "下午")
 			<< "   机房号：" << of.m_orderData[i]["roomID"]
 			<< "   预约状态：" << status << endl;
 	}
@@ -242,6 +242,87 @@ void Student::showAllOrder()
 // 取消预约
 void Student::cancelOrder()
 {
+	OrderFile of;
 
+	if (of.m_Num == 0)
+	{
+		cout << "无预约记录！" << endl;
+		finish();
+		return;
+	}
+
+	cout << "审核中 或者 预约成功 的记录是可以取消的，请输入要取消的记录：" << endl;
+
+	vector<int> v;	// 存放在最大容器中的行数编号
+	int index = 1;	// 输出时显示的行数记录
+
+	for (int i = 0; i < of.m_Num; i++)
+	{
+		// 判断文件是否有自身信息
+		if (m_StuID == stoi(of.m_orderData[i]["stuID"]))
+		{
+			if (of.m_orderData[i]["status"] == "1" || of.m_orderData[i]["status"] == "2")
+			{
+				// 找到一个符合条件的人就先放入数组，放入的数字 i 是对应的 orderData 具体的行
+				v.push_back(i);
+
+				// 输出符合条件的人
+				string status;
+
+				if (of.m_orderData[i]["status"] == "1")
+				{
+					status = "审核中……";
+				}
+				else if (of.m_orderData[i]["status"] == "2")
+				{
+					status = "预约成功！";
+				}
+
+
+				cout << index++ << "、";
+				cout << "预约日期：周" << of.m_orderData[i]["date"]
+					<< "   时间段：" << (of.m_orderData[i]["interval"] == "1" ? "上午" : "下午")
+					<< "   机房编号：" << of.m_orderData[i]["roomID"]
+					<< "   预约状态：" << status << endl;
+
+			}
+		}
+	}
+
+
+	cout << "请输入想取消的记录（0表示返回）：" << endl;
+
+
+	int select = 0;
+
+	while (true)
+	{
+		cin >> select;
+
+		if (select >= 0 && select <= v.size())
+		{
+			if (select == 0)
+			{
+				cout << "-----取消修改-----" << endl;
+				break;
+			}
+			else
+			{
+				// 因为容器v的每个下标对应的都是 orderData 里符合条件的具体行，而用户看到的是从 1 开始的序号，但容器v下标是从0开始，所以 select-1 后就能拿到要操作的人了
+				of.m_orderData[v[select - 1]]["status"] = "0";
+
+				of.updataOrder();	// 改完更新一下orderData
+
+				cout << "已取消预约！" << endl;
+
+				break;
+			}
+		}
+
+		cout << "输入有误！请重新输入：" << endl;
+	}
+
+
+	finish();
 
 }

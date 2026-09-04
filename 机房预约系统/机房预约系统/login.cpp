@@ -89,9 +89,8 @@ void Login(string FileName, int type)
 
 				person = new Teacher(ID, name, password);
 
+				teacherMenu(person);
 
-
-				finish();
 				return;
 			}
 		}

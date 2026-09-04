@@ -45,6 +45,9 @@
     <ClCompile Include="orderFile.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="teacherMenu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md">
@@ -86,6 +89,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="computerRoom.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="teacherMenu.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

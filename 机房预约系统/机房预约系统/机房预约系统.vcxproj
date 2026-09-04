@@ -149,6 +149,7 @@
     <ClCompile Include="student.cpp" />
     <ClCompile Include="studentMenu.cpp" />
     <ClCompile Include="teacher.cpp" />
+    <ClCompile Include="teacherMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md">
@@ -169,6 +170,7 @@
     <ClInclude Include="student.h" />
     <ClInclude Include="studentMenu.h" />
     <ClInclude Include="teacher.h" />
+    <ClInclude Include="teacherMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
