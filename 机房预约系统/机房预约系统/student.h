@@ -7,6 +7,7 @@ using namespace std;
 #include <fstream>
 #include <vector>
 #include "finish.h"
+#include "orderFile.h"
 
 
 class Student:public Identity

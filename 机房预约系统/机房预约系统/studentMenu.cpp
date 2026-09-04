@@ -24,6 +24,7 @@ void studentMenu(Identity*& student)
 		else if (select==3)	// 查看所有预约
 		{
 			cout << "-----查看所有预约-----" << endl;
+			s->showAllOrder();
 		}
 		else
 		{

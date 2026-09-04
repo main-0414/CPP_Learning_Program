@@ -2,7 +2,10 @@
 using namespace std;
 #include <iostream>
 #include <map>
+#include <string>
 #include "globalFile.h"
+#include <fstream>
+#include <vector>
 
 class OrderFile
 {
@@ -18,7 +21,7 @@ public:
 	map<int, map<string, string>> m_orderData;
 
 	// 预约记录条数
-	int m_Size();
+	int m_Num;
 
 
 };
