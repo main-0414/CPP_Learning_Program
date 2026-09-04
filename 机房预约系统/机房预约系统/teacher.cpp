@@ -3,7 +3,7 @@
 // 默认构造
 Teacher::Teacher()
 {
-
+	
 }
 
 // 有参构造
@@ -110,7 +110,7 @@ void Teacher::validOrder()
 		}
 	}
 
-
+	// 如果没有审核状态的记录，那就提示退出
 	if (v.empty())
 	{
 		cout << "您当前没有可取消的预约！" << endl;

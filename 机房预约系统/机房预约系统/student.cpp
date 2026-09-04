@@ -1,13 +1,10 @@
 ﻿#include "student.h"
 
-
 // 默认构造
-
 Student::Student()
 {
-
+	
 }
-
 
 // 有参构造
 Student::Student(int ID, string name, string password)
@@ -290,6 +287,7 @@ void Student::cancelOrder()
 		}
 	}
 
+	// 如果没有审核状态的记录，那就提示退出
 	if (v.empty())
 	{
 		cout << "您当前没有可取消的预约！" << endl;
