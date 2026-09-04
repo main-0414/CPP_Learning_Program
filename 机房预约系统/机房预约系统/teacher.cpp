@@ -105,7 +105,7 @@ void Teacher::validOrder()
 				<< "   学生编号：" << of.m_orderData[i]["stuID"]
 				<< "   学生姓名：" << of.m_orderData[i]["stuName"]
 				<< "  时间段：" << (of.m_orderData[i]["interval"] == "1" ? "上午" : "下午")
-				<< "  机房编号：" << of.m_orderData[i]["roomId"]
+				<< "  机房编号：" << of.m_orderData[i]["roomID"]
 				<< "   预约状态：审核中……" << endl;
 		}
 	}
