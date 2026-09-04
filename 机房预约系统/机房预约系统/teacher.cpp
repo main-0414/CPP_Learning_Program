@@ -111,6 +111,14 @@ void Teacher::validOrder()
 	}
 
 
+	if (v.empty())
+	{
+		cout << "您当前没有可取消的预约！" << endl;
+		finish();
+		return;
+	}
+
+
 	cout << "请输入要审核的预约记录（0表示返回）：" << endl;
 
 	int select = 0;
@@ -152,7 +160,7 @@ void Teacher::validOrder()
 							of.m_orderData[v[select - 1]]["status"] = "-1";
 						}
 
-						of.updataOrder();	// 更新文件
+						of.updateOrder();	// 更新文件
 
 						cout << "审核完成！" << endl;
 

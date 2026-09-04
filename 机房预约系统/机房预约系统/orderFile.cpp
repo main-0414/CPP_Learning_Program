@@ -50,7 +50,7 @@ OrderFile::OrderFile()
 
 
 // 更新预约记录
-void OrderFile::updataOrder()
+void OrderFile::updateOrder()
 {
 	if (m_Num == 0)	// 一条预约记录都没有就不做更新
 	{

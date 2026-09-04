@@ -286,9 +286,16 @@ void Student::cancelOrder()
 					<< "   预约状态：" << status << endl;
 
 			}
+
 		}
 	}
 
+	if (v.empty())
+	{
+		cout << "您当前没有可取消的预约！" << endl;
+		finish();
+		return;
+	}
 
 	cout << "请输入想取消的记录（0表示返回）：" << endl;
 
@@ -311,7 +318,7 @@ void Student::cancelOrder()
 				// 因为容器v的每个下标对应的都是 orderData 里符合条件的具体行，而用户看到的是从 1 开始的序号，但容器v下标是从0开始，所以 select-1 后就能拿到要操作的人了
 				of.m_orderData[v[select - 1]]["status"] = "0";
 
-				of.updataOrder();	// 改完更新一下orderData
+				of.updateOrder();	// 改完更新一下orderData
 
 				cout << "已取消预约！" << endl;
 

@@ -15,7 +15,7 @@ public:
 	OrderFile();
 
 	// 更新预约记录
-	void updataOrder();
+	void updateOrder();
 
 	// 申请记录的容器		key ----- 哪一条？		value ----- 条内信息
 	map<int, map<string, string>> m_orderData;
